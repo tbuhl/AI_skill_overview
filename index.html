@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skill Atlas for AI Agents</title>
+    <meta
+      name="description"
+      content="Search, filter, shortlist, and network-browse AI agent skills for Claude Code, Codex, Cursor, Gemini CLI, and other coding agents."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <button class="brand" type="button" data-nav-target="top" aria-label="Skill Atlas home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img">
+            <path d="M8 28c10 0 10-16 20-16s10 16 12 16" />
+            <path d="M10 36c7-9 15-8 20-2 3 4 7 4 10-1" />
+            <circle cx="11" cy="28" r="4" />
+            <circle cx="28" cy="12" r="4" />
+            <circle cx="40" cy="28" r="4" />
+            <circle cx="30" cy="34" r="4" />
+          </svg>
+        </span>
+        <span>
+          <strong>Skill Atlas</strong>
+          <small>Find the right capability for your AI</small>
+        </span>
+      </button>
+
+      <nav class="topnav" aria-label="Primary">
+        <button type="button" data-nav-target="explore">Explore</button>
+        <button type="button" data-nav-target="network">Network</button>
+        <button type="button" data-nav-target="shortlist">Shortlist</button>
+        <button type="button" data-nav-target="sources">Sources</button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="search-band" id="explore" aria-labelledby="explore-title">
+        <div class="search-copy">
+          <p class="eyebrow">Live local catalog</p>
+          <h1 id="explore-title">Browse agent skills by intent, category, author, source, or network.</h1>
+          <div class="stat-strip" aria-label="Catalog statistics">
+            <span><strong id="stat-total">0</strong> indexed</span>
+            <span><strong id="stat-official">0</strong> official</span>
+            <span><strong id="stat-community">0</strong> community</span>
+            <span><strong id="stat-pinned">0</strong> pinned</span>
+          </div>
+        </div>
+
+        <div class="search-tools" role="search">
+          <label class="search-box" for="search-input">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m16 16 5 5" />
+            </svg>
+            <input id="search-input" type="search" placeholder="Try: codebase graph, stop slop, Playwright, SEO, Stripe, video..." autocomplete="off" />
+          </label>
+          <button class="icon-button" id="random-skill" type="button" title="Jump to a random matching skill" aria-label="Jump to a random matching skill">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 3h5v5" />
+              <path d="M4 20 21 3" />
+              <path d="M21 16v5h-5" />
+              <path d="m15 15 6 6" />
+              <path d="M4 4l5 5" />
+            </svg>
+          </button>
+          <button class="icon-button" id="reset-filters" type="button" title="Reset filters" aria-label="Reset filters">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 6h18" />
+              <path d="M8 6v14" />
+              <path d="M16 6v14" />
+              <path d="M5 20h14" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="intent-row" id="intent-row" aria-label="Surf by intent"></div>
+      </section>
+
+      <section class="workspace">
+        <aside class="filters" aria-label="Filters">
+          <div class="panel-header">
+            <h2>Filters</h2>
+            <span id="filtered-count">0 shown</span>
+          </div>
+
+          <div class="filter-block">
+            <h3>Categories</h3>
+            <div class="chip-list" id="category-filters"></div>
+          </div>
+
+          <div class="filter-block">
+            <h3>Subcategories</h3>
+            <div class="chip-list compact" id="subcategory-filters"></div>
+          </div>
+
+          <div class="filter-block">
+            <h3>Source</h3>
+            <div class="segmented" id="source-filter" role="group" aria-label="Source type">
+              <button type="button" data-source="all" class="active">All</button>
+              <button type="button" data-source="official">Official</button>
+              <button type="button" data-source="community">Community</button>
+              <button type="button" data-source="pinned">Pinned</button>
+            </div>
+          </div>
+
+          <div class="filter-block">
+            <h3>Platforms</h3>
+            <div class="chip-list compact" id="platform-filters"></div>
+          </div>
+
+          <div class="filter-block">
+            <h3>Popular Tags</h3>
+            <div class="chip-list compact" id="tag-filters"></div>
+          </div>
+        </aside>
+
+        <section class="results-column" aria-live="polite">
+          <div class="toolbar">
+            <div class="segmented" id="view-mode" role="group" aria-label="View mode">
+              <button type="button" data-view="cards" class="active">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4z" /><path d="M13 4h7v7h-7z" /><path d="M4 13h7v7H4z" /><path d="M13 13h7v7h-7z" /></svg>
+                Cards
+              </button>
+              <button type="button" data-view="list">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13" /><path d="M8 12h13" /><path d="M8 18h13" /><path d="M3 6h1" /><path d="M3 12h1" /><path d="M3 18h1" /></svg>
+                List
+              </button>
+              <button type="button" data-view="network">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="3" /><circle cx="18" cy="7" r="3" /><circle cx="12" cy="18" r="3" /><path d="M8.7 7.1 15.3 6.9" /><path d="m7.8 8.6 2.9 6.8" /><path d="m16.7 9.3-3.4 6.4" /></svg>
+                Network
+              </button>
+            </div>
+
+            <label class="select-label" for="sort-select">
+              Sort
+              <select id="sort-select">
+                <option value="relevance">Relevance</option>
+                <option value="pinned">Pinned first</option>
+                <option value="name">Name</option>
+                <option value="category">Category</option>
+                <option value="author">Author</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="active-filters" id="active-filters"></div>
+
+          <div id="cards-view" class="cards-grid"></div>
+          <div id="list-view" class="list-view" hidden></div>
+
+          <div id="network-view" class="network-view" hidden>
+            <div class="network-topline" id="network">
+              <div>
+                <h2>Network Surf</h2>
+                <p>Click a hub to filter, or click a skill node to inspect it.</p>
+              </div>
+              <div class="segmented small" id="network-mode" role="group" aria-label="Network grouping">
+                <button type="button" data-network="smart" class="active">Smart</button>
+                <button type="button" data-network="category">Category</button>
+                <button type="button" data-network="subcategory">Subcategory</button>
+                <button type="button" data-network="tag">Tag</button>
+                <button type="button" data-network="author">Author</button>
+              </div>
+            </div>
+            <div class="network-insights" id="network-insights"></div>
+            <canvas id="skill-network" width="1000" height="620" aria-label="Skill relationship network"></canvas>
+            <div class="network-note" id="network-note">Showing the top matching skills so the map stays navigable.</div>
+          </div>
+
+          <button class="load-more" id="load-more" type="button">Show more results</button>
+        </section>
+
+        <aside class="details" aria-label="Skill details">
+          <div class="details-empty" id="details-empty">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M10 30c9-13 18-13 28 0" />
+              <circle cx="14" cy="29" r="4" />
+              <circle cx="24" cy="17" r="4" />
+              <circle cx="34" cy="29" r="4" />
+            </svg>
+            <h2>Pick a skill</h2>
+            <p>Open a card or node to see links, tags, related skills, and a quick fit read.</p>
+          </div>
+
+          <div class="details-content" id="details-content" hidden></div>
+
+          <section class="shortlist" id="shortlist">
+            <div class="panel-header">
+              <h2>Shortlist</h2>
+              <button id="clear-shortlist" type="button">Clear</button>
+            </div>
+            <div id="shortlist-list" class="shortlist-list"></div>
+            <button class="copy-brief" id="copy-brief" type="button">Copy stack brief</button>
+          </section>
+        </aside>
+      </section>
+
+      <section class="sources-band" id="sources">
+        <div>
+          <p class="eyebrow">Sources</p>
+          <h2>Built from current public skill directories and pinned examples.</h2>
+        </div>
+        <div class="source-links" id="source-links"></div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="skills-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -27,6 +27,7 @@ function readStoredJSON(key, fallback) {
 
 const state = {
   query: "",
+  context: storage.getItem("skill-atlas-context") || "",
   categories: new Set(),
   subcategories: new Set(),
   tags: new Set(),
@@ -59,6 +60,10 @@ const els = {
   canvas: document.querySelector("#skill-network"),
   networkInsights: document.querySelector("#network-insights"),
   networkNote: document.querySelector("#network-note"),
+  contextInput: document.querySelector("#context-input"),
+  contextCount: document.querySelector("#context-count"),
+  contextMatches: document.querySelector("#context-matches"),
+  contextBrief: document.querySelector("#context-brief"),
   detailsEmpty: document.querySelector("#details-empty"),
   detailsContent: document.querySelector("#details-content"),
   shortlist: document.querySelector("#shortlist-list"),
@@ -136,6 +141,42 @@ const palette = {
   Education: "#5f7b3a",
 };
 
+const contextStopWords = new Set([
+  "about",
+  "after",
+  "again",
+  "agent",
+  "agents",
+  "also",
+  "and",
+  "any",
+  "build",
+  "could",
+  "for",
+  "from",
+  "have",
+  "into",
+  "make",
+  "need",
+  "needs",
+  "project",
+  "should",
+  "skill",
+  "skills",
+  "task",
+  "that",
+  "the",
+  "their",
+  "there",
+  "this",
+  "your",
+  "using",
+  "want",
+  "with",
+  "work",
+  "would",
+]);
+
 const icon = {
   external:
     '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7" /><path d="M10 14 21 3" /><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" /></svg>',
@@ -190,7 +231,8 @@ function scoreSkill(skill) {
   let score = skill.pinned ? 8 : 0;
   if (!query) return score;
 
-  const tokens = query.split(" ").filter(Boolean);
+  const tokens = query.split(" ").filter((token) => token.length > 2 && !contextStopWords.has(token));
+  if (!tokens.length) return score;
   let matched = 0;
   for (const token of tokens) {
     if (skill.searchText.includes(token)) {
@@ -207,6 +249,70 @@ function scoreSkill(skill) {
   if (matched < Math.ceil(tokens.length * 0.55)) score -= 8;
   if (skill.pinned && matched > 0) score += 12;
   return score;
+}
+
+function contextTokens(text) {
+  return [...new Set(normalize(text).split(" ").filter((token) => token.length > 2 && !contextStopWords.has(token)))];
+}
+
+function scoreSkillForContext(skill, tokens) {
+  if (!tokens.length) return 0;
+  let score = skill.pinned ? 4 : 0;
+  if (state.shortlist.has(skill.id)) score += 10;
+
+  const title = normalize(skill.title);
+  const repo = normalize(skill.repo);
+  const category = normalize(skill.primaryCategory);
+  const subcategory = normalize(skill.subcategory);
+  const tagText = normalize(skill.tags.join(" "));
+  const description = normalize(skill.description);
+
+  for (const token of tokens) {
+    if (title.includes(token)) score += 16;
+    if (repo.includes(token)) score += 12;
+    if (subcategory.includes(token)) score += 10;
+    if (category.includes(token)) score += 8;
+    if (tagText.includes(token)) score += 7;
+    if (description.includes(token)) score += 4;
+  }
+
+  const phrase = tokens.join(" ");
+  if (phrase.length > 7 && skill.searchText.includes(phrase)) score += 18;
+  return score;
+}
+
+function contextReason(skill, tokens) {
+  const tagHits = skill.tags.filter((tag) => tokens.some((token) => normalize(tag).includes(token))).slice(0, 3);
+  const titleHits = tokens.filter((token) => normalize(skill.title).includes(token)).slice(0, 2);
+  const categoryHit = tokens.some((token) => normalize(`${skill.primaryCategory} ${skill.subcategory}`).includes(token));
+
+  if (titleHits.length) return `name match: ${titleHits.join(", ")}`;
+  if (tagHits.length) return `tag match: ${tagHits.join(", ")}`;
+  if (categoryHit) return `${skill.primaryCategory} / ${skill.subcategory}`;
+  if (state.shortlist.has(skill.id)) return "already shortlisted";
+  if (skill.pinned) return "pinned reference skill";
+  return `${skill.primaryCategory} / ${skill.subcategory}`;
+}
+
+function contextRecommendations(limit = 8) {
+  const tokens = contextTokens(state.context);
+  if (!tokens.length) {
+    return [...state.shortlist]
+      .map(getSkill)
+      .filter(Boolean)
+      .slice(0, limit)
+      .map((skill) => ({ skill, score: 1, reason: "already shortlisted" }));
+  }
+
+  return skills
+    .map((skill) => ({
+      skill,
+      score: scoreSkillForContext(skill, tokens),
+      reason: contextReason(skill, tokens),
+    }))
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || Number(b.skill.pinned) - Number(a.skill.pinned) || a.skill.title.localeCompare(b.skill.title))
+    .slice(0, limit);
 }
 
 function passesFilters(skill) {
@@ -408,6 +514,7 @@ function renderResults() {
   renderActiveFilters();
   renderDetails();
   renderShortlist();
+  renderContext();
 }
 
 function emptyResults() {
@@ -515,6 +622,46 @@ function renderShortlist() {
         )
         .join("")
     : '<p class="empty-small">Save candidates as you browse.</p>';
+}
+
+function disclosureBrief(items = contextRecommendations(7)) {
+  const context = state.context.trim() || "[Add task context here]";
+  if (!items.length) {
+    return `Task context:\n${context}\n\nDisclosed skills:\nNo matching skills selected yet.`;
+  }
+
+  return `Task context:\n${context}\n\nDisclosed skills for this context:\n${items
+    .map(
+      ({ skill, reason }, index) =>
+        `${index + 1}. ${skill.title} (${skill.repo})\n   Fit: ${reason}; ${skill.primaryCategory} / ${skill.subcategory}\n   Use when: ${skill.description}\n   Source: ${skill.url}`,
+    )
+    .join("\n")}\n\nInstruction to the AI agent:\nConsider these disclosed skills before starting. Use only the smallest relevant subset, explain which skill(s) you are applying, and ignore any listed skill that does not fit the task.`;
+}
+
+function renderContext() {
+  if (!els.contextInput) return;
+  if (els.contextInput.value !== state.context) els.contextInput.value = state.context;
+  const recommendations = contextRecommendations(8);
+  els.contextCount.textContent = `${number(recommendations.length)} matched`;
+  els.contextMatches.innerHTML = recommendations.length
+    ? recommendations
+        .map(
+          ({ skill, score, reason }) => `
+            <article class="context-match" data-id="${escapeHTML(skill.id)}">
+              <div>
+                <strong>${escapeHTML(skill.title)}</strong>
+                <small>${escapeHTML(skill.repo)} · ${escapeHTML(skill.primaryCategory)} / ${escapeHTML(skill.subcategory)}</small>
+              </div>
+              <p>${escapeHTML(reason)} · score ${number(score)}</p>
+              <div class="context-match-actions">
+                <button type="button" data-action="select" data-id="${escapeHTML(skill.id)}">Inspect</button>
+                <button type="button" data-action="shortlist" data-id="${escapeHTML(skill.id)}">${state.shortlist.has(skill.id) ? "Saved" : "Save"}</button>
+              </div>
+            </article>`,
+        )
+        .join("")
+    : '<p class="empty-small">Shortlist a skill or add task context.</p>';
+  els.contextBrief.value = disclosureBrief(recommendations.slice(0, 7));
 }
 
 function renderSources() {
@@ -1065,6 +1212,42 @@ function initEvents() {
 
   document.querySelector("#copy-brief").addEventListener("click", () => {
     copyText(stackBrief()).then(() => showToast("Stack brief copied"));
+  });
+
+  els.contextInput?.addEventListener("input", (event) => {
+    state.context = event.target.value;
+    storage.setItem("skill-atlas-context", state.context);
+    renderContext();
+  });
+
+  document.querySelector("#context-use-search")?.addEventListener("click", () => {
+    state.query = contextTokens(state.context).join(" ");
+    els.search.value = state.query;
+    state.visible = 96;
+    renderResults();
+    showToast("Context applied to search");
+  });
+
+  document.querySelector("#context-add-top")?.addEventListener("click", () => {
+    const added = contextRecommendations(5).filter(({ skill }) => {
+      const isNew = !state.shortlist.has(skill.id);
+      state.shortlist.add(skill.id);
+      return isNew;
+    }).length;
+    saveShortlist();
+    renderResults();
+    showToast(added ? `Added ${added} skills` : "Top skills already saved");
+  });
+
+  document.querySelector("#context-copy")?.addEventListener("click", () => {
+    copyText(els.contextBrief.value).then(() => showToast("Context copied"));
+  });
+
+  document.querySelector("#context-clear")?.addEventListener("click", () => {
+    state.context = "";
+    storage.removeItem("skill-atlas-context");
+    renderContext();
+    showToast("Context cleared");
   });
 
   els.canvas.addEventListener("pointermove", (event) => {

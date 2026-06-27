@@ -31,6 +31,7 @@
 
       <nav class="topnav" aria-label="Primary">
         <button type="button" data-nav-target="explore">Explore</button>
+        <button type="button" data-nav-target="context">Context</button>
         <button type="button" data-nav-target="network">Network</button>
         <button type="button" data-nav-target="shortlist">Shortlist</button>
         <button type="button" data-nav-target="sources">Sources</button>
@@ -78,6 +79,32 @@
         </div>
 
         <div class="intent-row" id="intent-row" aria-label="Surf by intent"></div>
+      </section>
+
+      <section class="context-band" id="context" aria-labelledby="context-title">
+        <div class="context-editor">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Context Disclosure</p>
+              <h2 id="context-title">Skill context for the next AI task</h2>
+            </div>
+            <span id="context-count">0 matched</span>
+          </div>
+          <label class="context-input-wrap" for="context-input">
+            <textarea id="context-input" rows="5" placeholder="Paste the task, project, or user request here..."></textarea>
+          </label>
+          <div class="context-actions">
+            <button type="button" id="context-use-search">Use as search</button>
+            <button type="button" id="context-add-top">Add top 5</button>
+            <button type="button" id="context-copy">Copy context</button>
+            <button type="button" id="context-clear">Clear</button>
+          </div>
+        </div>
+
+        <div class="context-output">
+          <div class="context-matches" id="context-matches"></div>
+          <textarea id="context-brief" rows="10" readonly aria-label="Generated skill context"></textarea>
+        </div>
       </section>
 
       <section class="workspace">

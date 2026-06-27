@@ -2,6 +2,8 @@
 
 Skill Atlas is a searchable and network-browsable catalog of AI agent skills for Claude Code, Codex, Cursor, Gemini CLI, and related agents.
 
+It also includes a Context Disclosure panel: paste a task or project request, and the atlas recommends matching skills plus a compact context block you can paste into an AI agent before it starts work.
+
 ## Run Locally
 
 Use an HTTP server instead of opening `index.html` directly. Some browsers block storage and hash navigation under `file://`.

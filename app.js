@@ -463,7 +463,7 @@ function renderActiveFilters() {
     .map(
       ([type, value, label]) => `
         <span class="active-token">
-          ${escapeHTML(label)}: ${escapeHTML(value === "skills-sh" ? "skills.sh top 2%" : value)}
+          ${escapeHTML(label)}: ${escapeHTML(value === "skills-sh" ? "skills.sh top 10%" : value)}
           <button type="button" data-remove-filter="${escapeHTML(type)}" data-value="${escapeHTML(value)}" aria-label="Remove ${escapeHTML(label)} filter">x</button>
         </span>`,
     )

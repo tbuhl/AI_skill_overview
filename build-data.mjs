@@ -5,7 +5,10 @@ const root = process.cwd();
 const sourcePath = fs.existsSync(path.join(root, "awesome-agent-skills.md"))
   ? path.join(root, "awesome-agent-skills.md")
   : path.join(root, "sources", "awesome-agent-skills.md");
-const skillsShPath = path.join(root, "sources", "skills-sh-top.json");
+const skillsShPaths = [
+  path.join(root, "sources", "skills-sh-top.json"),
+  path.join(root, "sources", "skills-sh-top10-remainder.json"),
+];
 
 const markdown = fs.readFileSync(sourcePath, "utf8");
 
@@ -430,6 +433,8 @@ function normalizeEntry(entry) {
     weeklyInstalls: Array.isArray(entry.weeklyInstalls) ? entry.weeklyInstalls.map(asNumber).filter((value) => value !== null) : [],
     leaderboard: entry.leaderboard || "",
     leaderboardPercent: asNumber(entry.leaderboardPercent),
+    leaderboardExcludedPercent: asNumber(entry.leaderboardExcludedPercent),
+    leaderboardSourceFile: entry.leaderboardSourceFile || "",
     registryUrl: entry.registryUrl || (domain.includes("skills.sh") ? entry.url : ""),
     githubUrl: entry.githubUrl || "",
     sourceRepo: entry.sourceRepo || "",
@@ -443,28 +448,30 @@ function formatCount(value) {
   return new Intl.NumberFormat("en-US").format(value || 0);
 }
 
-function loadSkillsShTop() {
-  if (!fs.existsSync(skillsShPath)) {
-    return { metadata: null, skills: [] };
-  }
-
-  const metadata = JSON.parse(fs.readFileSync(skillsShPath, "utf8"));
-  const skills = (metadata.skills || []).map((item) => {
+function loadSkillsShDatasets() {
+  const datasets = skillsShPaths
+    .filter((source) => fs.existsSync(source))
+    .map((source) => ({ source, metadata: JSON.parse(fs.readFileSync(source, "utf8")) }));
+  const skills = datasets.flatMap(({ source, metadata }) => (metadata.skills || []).map((item) => {
     const sourceRepo = item.source || "unknown/source";
     const skillId = item.skillId || item.name || "skill";
     const registryUrl = item.url || `https://www.skills.sh/${sourceRepo}/${skillId}`;
     const githubUrl = item.githubUrl || (sourceRepo.includes("/") ? `https://github.com/${sourceRepo}` : "");
     const topics = Array.isArray(item.topics) ? item.topics : [];
     const topicTags = topics.map(slugify).filter(Boolean);
+    const excludedTopPercent = metadata.excludedTopPercent || 0;
+    const collection = excludedTopPercent
+      ? `skills.sh Top ${metadata.topPercent}% excluding top ${excludedTopPercent}%`
+      : `skills.sh Top ${metadata.topPercent || 2}%`;
     const tags = [
       ...inferTags([sourceRepo, skillId, item.name || "", item.description || "", topics.join(" ")]),
       ...topicTags,
-      "skills-sh-top-2",
+      `skills-sh-top-${metadata.topPercent || 2}`,
       "leaderboard",
     ];
     const description =
       item.description ||
-      `Top ${metadata.topPercent || 2}% skills.sh all-time leaderboard skill with ${formatCount(item.installs)} installs.`;
+      `skills.sh all-time rank #${item.rank} with ${formatCount(item.installs)} installs.`;
 
     return normalizeEntry({
       repo: `${sourceRepo}/${skillId}`,
@@ -473,24 +480,26 @@ function loadSkillsShTop() {
       author: sourceRepo.split("/")[0] || "unknown",
       url: registryUrl,
       description,
-      collection: "skills.sh Top 2%",
+      collection,
       status: item.isOfficial ? "official" : "community",
       tags: [...new Set(tags)].slice(0, 12),
       platforms: ["Claude Code", "Codex", "Cursor", "Gemini CLI", "OpenCode", "Windsurf"],
       rank: item.rank,
       installs: item.installs,
       weeklyInstalls: item.weeklyInstalls || [],
-      leaderboard: "skills.sh all-time top 2%",
+      leaderboard: `skills.sh all-time top ${metadata.topPercent || 2}%`,
       leaderboardPercent: metadata.topPercent || 2,
+      leaderboardExcludedPercent: excludedTopPercent,
+      leaderboardSourceFile: path.relative(root, source),
       registryUrl,
       githubUrl,
       sourceRepo,
       installCommand: item.installCommand || `npx skills add ${githubUrl || sourceRepo} --skill ${skillId}`,
       topics,
     });
-  });
+  }));
 
-  return { metadata, skills };
+  return { datasets, skills };
 }
 
 function parseMarkdown() {
@@ -566,7 +575,7 @@ for (const manual of userPinned) {
   }
 }
 
-const skillsShTop = loadSkillsShTop();
+const skillsShData = loadSkillsShDatasets();
 
 function mergeSkill(target, incoming) {
   target.description = target.description.length >= incoming.description.length ? target.description : incoming.description;
@@ -578,6 +587,8 @@ function mergeSkill(target, incoming) {
   target.weeklyInstalls = incoming.weeklyInstalls?.length ? incoming.weeklyInstalls : target.weeklyInstalls;
   target.leaderboard = incoming.leaderboard || target.leaderboard;
   target.leaderboardPercent = incoming.leaderboardPercent || target.leaderboardPercent;
+  target.leaderboardExcludedPercent = incoming.leaderboardExcludedPercent || target.leaderboardExcludedPercent;
+  target.leaderboardSourceFile = incoming.leaderboardSourceFile || target.leaderboardSourceFile;
   target.registryUrl = incoming.registryUrl || target.registryUrl;
   target.githubUrl = incoming.githubUrl || target.githubUrl;
   target.sourceRepo = incoming.sourceRepo || target.sourceRepo;
@@ -585,9 +596,16 @@ function mergeSkill(target, incoming) {
   if (incoming.status === "official") target.status = "official";
 }
 
-for (const ranked of skillsShTop.skills) {
+function uniqueSkillKey(skill) {
+  if (skill.registryUrl) return `registry:${skill.registryUrl.toLowerCase()}`;
+  if (skill.sourceRepo && skill.skillName) return `skill:${skill.sourceRepo.toLowerCase()}/${skill.skillName.toLowerCase()}`;
+  return `entry:${(skill.repo || "").toLowerCase()}|${(skill.url || "").toLowerCase()}`;
+}
+
+for (const ranked of skillsShData.skills) {
   const matching = [...byRepoOrUrl.values()].find(
     (item) =>
+      uniqueSkillKey(item) === uniqueSkillKey(ranked) ||
       item.repo.toLowerCase() === ranked.repo.toLowerCase() ||
       item.url.toLowerCase() === ranked.url.toLowerCase(),
   );
@@ -598,7 +616,14 @@ for (const ranked of skillsShTop.skills) {
   }
 }
 
-const skills = [...byRepoOrUrl.values()]
+const uniqueSkills = new Map();
+for (const skill of byRepoOrUrl.values()) {
+  const key = uniqueSkillKey(skill);
+  if (uniqueSkills.has(key)) mergeSkill(uniqueSkills.get(key), skill);
+  else uniqueSkills.set(key, skill);
+}
+
+const skills = [...uniqueSkills.values()]
   .map((skill) => ({
     ...skill,
     searchText: [
@@ -628,9 +653,11 @@ const stats = {
   pinned: skills.filter((skill) => skill.pinned).length,
   official: skills.filter((skill) => skill.status === "official").length,
   community: skills.filter((skill) => skill.status !== "official").length,
-  skillsShTop: skills.filter((skill) => skill.leaderboard === "skills.sh all-time top 2%").length,
-  skillsShTotalAvailable: skillsShTop.metadata?.totalSkills || 0,
-  skillsShTopPercent: skillsShTop.metadata?.topPercent || 0,
+  skillsShTop: skills.filter((skill) => skill.leaderboard.startsWith("skills.sh")).length,
+  skillsShTop2: skills.filter((skill) => skill.leaderboard === "skills.sh all-time top 2%").length,
+  skillsShTop10Remainder: skills.filter((skill) => skill.leaderboard === "skills.sh all-time top 10%").length,
+  skillsShTotalAvailable: Math.max(...skillsShData.datasets.map(({ metadata }) => metadata.totalSkills || 0), 0),
+  skillsShTopPercent: Math.max(...skillsShData.datasets.map(({ metadata }) => metadata.topPercent || 0), 0),
   categories: Object.fromEntries(
     [...new Set(skills.map((skill) => skill.primaryCategory))]
       .sort()
@@ -662,9 +689,9 @@ const payload = {
       note: "Cross-check for live agent-skill directory framing and major author groups.",
     },
     {
-      name: "skills.sh Top 2%",
+      name: "skills.sh Top 10%",
       url: "https://www.skills.sh/",
-      note: `${stats.skillsShTop} all-time leaderboard skills selected from ${formatCount(stats.skillsShTotalAvailable)} skills.`,
+      note: `${stats.skillsShTop} unique all-time leaderboard skills selected from ${formatCount(stats.skillsShTotalAvailable)} skills; ${stats.skillsShTop10Remainder} were added beyond the existing top 2%.`,
     },
     {
       name: "Pinned examples from the brief",

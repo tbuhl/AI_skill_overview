@@ -1,18 +1,22 @@
 {
-  "generatedAt": "2026-06-27T09:20:49.127Z",
+  "generatedAt": "2026-06-27T09:32:28.477Z",
   "sourceUrl": "https://www.skills.sh/",
   "view": "all-time",
   "totalSkills": 9637,
   "allTimeTotal": 799390,
   "topPercent": 2,
+  "excludedTopPercent": 0,
+  "excludedCount": 0,
   "topCount": 193,
+  "startRank": 1,
+  "endRank": 193,
   "skills": [
     {
       "rank": 1,
       "source": "vercel-labs/skills",
       "skillId": "find-skills",
       "name": "find-skills",
-      "installs": 2221983,
+      "installs": 2223102,
       "weeklyInstalls": [
         112234,
         113924,
@@ -37,7 +41,7 @@
       "source": "anthropics/skills",
       "skillId": "frontend-design",
       "name": "frontend-design",
-      "installs": 596292,
+      "installs": 596587,
       "weeklyInstalls": [
         23831,
         26733,
@@ -62,7 +66,7 @@
       "source": "vercel-labs/agent-skills",
       "skillId": "vercel-react-best-practices",
       "name": "vercel-react-best-practices",
-      "installs": 506282,
+      "installs": 506449,
       "weeklyInstalls": [
         16807,
         18139,
@@ -88,7 +92,7 @@
       "source": "vercel-labs/agent-browser",
       "skillId": "agent-browser",
       "name": "agent-browser",
-      "installs": 489186,
+      "installs": 489322,
       "weeklyInstalls": [
         17235,
         24440,
@@ -113,7 +117,7 @@
       "source": "vercel-labs/agent-skills",
       "skillId": "web-design-guidelines",
       "name": "web-design-guidelines",
-      "installs": 419091,
+      "installs": 419260,
       "weeklyInstalls": [
         13618,
         15079,
@@ -138,7 +142,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "microsoft-foundry",
       "name": "microsoft-foundry",
-      "installs": 418655,
+      "installs": 418730,
       "weeklyInstalls": [
         21117,
         21576,
@@ -161,7 +165,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-ai",
       "name": "azure-ai",
-      "installs": 415968,
+      "installs": 416041,
       "weeklyInstalls": [
         20804,
         21359,
@@ -184,7 +188,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-deploy",
       "name": "azure-deploy",
-      "installs": 415564,
+      "installs": 415637,
       "weeklyInstalls": [
         20776,
         21402,
@@ -207,7 +211,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-diagnostics",
       "name": "azure-diagnostics",
-      "installs": 415468,
+      "installs": 415541,
       "weeklyInstalls": [
         20838,
         21362,
@@ -230,7 +234,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-prepare",
       "name": "azure-prepare",
-      "installs": 415414,
+      "installs": 415488,
       "weeklyInstalls": [
         20871,
         21429,
@@ -253,7 +257,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-storage",
       "name": "azure-storage",
-      "installs": 415123,
+      "installs": 415196,
       "weeklyInstalls": [
         20802,
         21303,
@@ -276,7 +280,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-validate",
       "name": "azure-validate",
-      "installs": 414785,
+      "installs": 414858,
       "weeklyInstalls": [
         20744,
         21278,
@@ -299,7 +303,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "entra-app-registration",
       "name": "entra-app-registration",
-      "installs": 414666,
+      "installs": 414739,
       "weeklyInstalls": [
         20742,
         21276,
@@ -322,7 +326,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "appinsights-instrumentation",
       "name": "appinsights-instrumentation",
-      "installs": 414601,
+      "installs": 414674,
       "weeklyInstalls": [
         20747,
         21359,
@@ -345,7 +349,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-compliance",
       "name": "azure-compliance",
-      "installs": 414532,
+      "installs": 414605,
       "weeklyInstalls": [
         20739,
         21263,
@@ -368,7 +372,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-resource-lookup",
       "name": "azure-resource-lookup",
-      "installs": 414530,
+      "installs": 414603,
       "weeklyInstalls": [
         20758,
         21283,
@@ -391,7 +395,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-rbac",
       "name": "azure-rbac",
-      "installs": 414526,
+      "installs": 414599,
       "weeklyInstalls": [
         20735,
         21267,
@@ -414,7 +418,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-aigateway",
       "name": "azure-aigateway",
-      "installs": 414440,
+      "installs": 414513,
       "weeklyInstalls": [
         20733,
         21264,
@@ -437,7 +441,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-kusto",
       "name": "azure-kusto",
-      "installs": 414386,
+      "installs": 414459,
       "weeklyInstalls": [
         20727,
         21260,
@@ -460,7 +464,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-resource-visualizer",
       "name": "azure-resource-visualizer",
-      "installs": 414370,
+      "installs": 414443,
       "weeklyInstalls": [
         20732,
         21266,
@@ -483,7 +487,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-messaging",
       "name": "azure-messaging",
-      "installs": 404140,
+      "installs": 404212,
       "weeklyInstalls": [
         20742,
         21260,
@@ -506,7 +510,7 @@
       "source": "mattpocock/skills",
       "skillId": "grill-me",
       "name": "grill-me",
-      "installs": 401317,
+      "installs": 401810,
       "weeklyInstalls": [
         36391,
         36881,
@@ -529,7 +533,7 @@
       "source": "remotion-dev/skills",
       "skillId": "remotion-best-practices",
       "name": "remotion-best-practices",
-      "installs": 394410,
+      "installs": 394524,
       "weeklyInstalls": [
         14947,
         15887,
@@ -552,7 +556,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-hosted-copilot-sdk",
       "name": "azure-hosted-copilot-sdk",
-      "installs": 387464,
+      "installs": 387536,
       "weeklyInstalls": [
         20671,
         21220,
@@ -575,7 +579,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-compute",
       "name": "azure-compute",
-      "installs": 358210,
+      "installs": 358282,
       "weeklyInstalls": [
         20519,
         21169,
@@ -598,7 +602,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-cloud-migrate",
       "name": "azure-cloud-migrate",
-      "installs": 348197,
+      "installs": 348269,
       "weeklyInstalls": [
         20570,
         21161,
@@ -621,7 +625,7 @@
       "source": "mattpocock/skills",
       "skillId": "improve-codebase-architecture",
       "name": "improve-codebase-architecture",
-      "installs": 330158,
+      "installs": 330548,
       "weeklyInstalls": [
         30646,
         32683,
@@ -644,7 +648,7 @@
       "source": "mattpocock/skills",
       "skillId": "grill-with-docs",
       "name": "grill-with-docs",
-      "installs": 329150,
+      "installs": 329578,
       "weeklyInstalls": [
         27847,
         31690,
@@ -667,7 +671,7 @@
       "source": "mattpocock/skills",
       "skillId": "tdd",
       "name": "tdd",
-      "installs": 311642,
+      "installs": 312020,
       "weeklyInstalls": [
         28232,
         30275,
@@ -690,7 +694,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "video-edit",
       "name": "video-edit",
-      "installs": 304476,
+      "installs": 304980,
       "weeklyInstalls": [
         13336,
         30784,
@@ -713,7 +717,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "image-to-video",
       "name": "image-to-video",
-      "installs": 303552,
+      "installs": 304052,
       "weeklyInstalls": [
         13163,
         30777,
@@ -736,7 +740,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "image-edit",
       "name": "image-edit",
-      "installs": 303227,
+      "installs": 303713,
       "weeklyInstalls": [
         13104,
         30536,
@@ -759,7 +763,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "flux-kontext",
       "name": "flux-kontext",
-      "installs": 303007,
+      "installs": 303494,
       "weeklyInstalls": [
         13121,
         30532,
@@ -782,7 +786,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "nano-banana-edit",
       "name": "nano-banana-edit",
-      "installs": 302979,
+      "installs": 303476,
       "weeklyInstalls": [
         13091,
         30552,
@@ -805,7 +809,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "nano-banana-2",
       "name": "nano-banana-2",
-      "installs": 302884,
+      "installs": 303349,
       "weeklyInstalls": [
         13043,
         30580,
@@ -828,7 +832,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "wan-2-7",
       "name": "wan-2-7",
-      "installs": 302637,
+      "installs": 303131,
       "weeklyInstalls": [
         13250,
         30408,
@@ -851,7 +855,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "happyhorse-1-0",
       "name": "happyhorse-1-0",
-      "installs": 302358,
+      "installs": 302841,
       "weeklyInstalls": [
         13270,
         30670,
@@ -874,7 +878,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "gpt-image-edit",
       "name": "gpt-image-edit",
-      "installs": 302295,
+      "installs": 302777,
       "weeklyInstalls": [
         13107,
         30513,
@@ -897,7 +901,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "seedance-v2",
       "name": "seedance-v2",
-      "installs": 302226,
+      "installs": 302726,
       "weeklyInstalls": [
         13301,
         30543,
@@ -920,7 +924,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "flux-2-klein",
       "name": "flux-2-klein",
-      "installs": 302127,
+      "installs": 302626,
       "weeklyInstalls": [
         13057,
         30564,
@@ -943,7 +947,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-approval",
       "name": "lark-approval",
-      "installs": 299358,
+      "installs": 299891,
       "weeklyInstalls": [
         10508,
         14310,
@@ -966,7 +970,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-doc",
       "name": "lark-doc",
-      "installs": 299129,
+      "installs": 299662,
       "weeklyInstalls": [
         10506,
         14295,
@@ -989,7 +993,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-base",
       "name": "lark-base",
-      "installs": 299101,
+      "installs": 299633,
       "weeklyInstalls": [
         10503,
         14293,
@@ -1012,7 +1016,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-calendar",
       "name": "lark-calendar",
-      "installs": 299033,
+      "installs": 299566,
       "weeklyInstalls": [
         10502,
         14295,
@@ -1035,7 +1039,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-drive",
       "name": "lark-drive",
-      "installs": 299006,
+      "installs": 299539,
       "weeklyInstalls": [
         10499,
         14296,
@@ -1058,7 +1062,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-contact",
       "name": "lark-contact",
-      "installs": 298998,
+      "installs": 299531,
       "weeklyInstalls": [
         10502,
         14297,
@@ -1081,7 +1085,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-im",
       "name": "lark-im",
-      "installs": 298981,
+      "installs": 299514,
       "weeklyInstalls": [
         10503,
         14294,
@@ -1104,7 +1108,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-shared",
       "name": "lark-shared",
-      "installs": 298969,
+      "installs": 299502,
       "weeklyInstalls": [
         10508,
         14295,
@@ -1127,7 +1131,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-attendance",
       "name": "lark-attendance",
-      "installs": 298948,
+      "installs": 299481,
       "weeklyInstalls": [
         10498,
         14297,
@@ -1150,7 +1154,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-event",
       "name": "lark-event",
-      "installs": 298893,
+      "installs": 299424,
       "weeklyInstalls": [
         10500,
         14289,
@@ -1173,7 +1177,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-mail",
       "name": "lark-mail",
-      "installs": 298857,
+      "installs": 299388,
       "weeklyInstalls": [
         10507,
         14296,
@@ -1196,7 +1200,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-sheets",
       "name": "lark-sheets",
-      "installs": 298832,
+      "installs": 299364,
       "weeklyInstalls": [
         10499,
         14293,
@@ -1219,7 +1223,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-minutes",
       "name": "lark-minutes",
-      "installs": 298826,
+      "installs": 299357,
       "weeklyInstalls": [
         10497,
         14297,
@@ -1242,7 +1246,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-openapi-explorer",
       "name": "lark-openapi-explorer",
-      "installs": 298817,
+      "installs": 299350,
       "weeklyInstalls": [
         10501,
         14295,
@@ -1265,7 +1269,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-task",
       "name": "lark-task",
-      "installs": 298794,
+      "installs": 299326,
       "weeklyInstalls": [
         10499,
         14296,
@@ -1288,7 +1292,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-wiki",
       "name": "lark-wiki",
-      "installs": 298764,
+      "installs": 299296,
       "weeklyInstalls": [
         10500,
         14293,
@@ -1311,7 +1315,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-whiteboard",
       "name": "lark-whiteboard",
-      "installs": 298748,
+      "installs": 299280,
       "weeklyInstalls": [
         10502,
         14292,
@@ -1334,7 +1338,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-skill-maker",
       "name": "lark-skill-maker",
-      "installs": 298730,
+      "installs": 299263,
       "weeklyInstalls": [
         10493,
         14287,
@@ -1357,7 +1361,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-slides",
       "name": "lark-slides",
-      "installs": 298705,
+      "installs": 299238,
       "weeklyInstalls": [
         10493,
         14286,
@@ -1380,7 +1384,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-vc",
       "name": "lark-vc",
-      "installs": 298680,
+      "installs": 299212,
       "weeklyInstalls": [
         10493,
         14295,
@@ -1403,7 +1407,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-workflow-meeting-summary",
       "name": "lark-workflow-meeting-summary",
-      "installs": 298650,
+      "installs": 299183,
       "weeklyInstalls": [
         10498,
         14285,
@@ -1426,7 +1430,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-workflow-standup-report",
       "name": "lark-workflow-standup-report",
-      "installs": 298635,
+      "installs": 299168,
       "weeklyInstalls": [
         10497,
         14290,
@@ -1446,33 +1450,10 @@
     },
     {
       "rank": 63,
-      "source": "mattpocock/skills",
-      "skillId": "to-prd",
-      "name": "to-prd",
-      "installs": 292176,
-      "weeklyInstalls": [
-        27447,
-        29288,
-        38631,
-        36938,
-        30095,
-        26139,
-        32619,
-        36749
-      ],
-      "isOfficial": false,
-      "url": "https://www.skills.sh/mattpocock/skills/to-prd",
-      "description": "Turn the current conversation into a PRD and publish it to the project issue tracker — no interview, just synthesis of what you've already discussed.",
-      "githubUrl": "https://github.com/mattpocock/skills",
-      "topics": [],
-      "installCommand": "npx skills add https://github.com/mattpocock/skills --skill to-prd"
-    },
-    {
-      "rank": 64,
       "source": "agentspace-so/skills",
       "skillId": "agentspace",
       "name": "agentspace",
-      "installs": 292131,
+      "installs": 292598,
       "weeklyInstalls": [
         13758,
         27330,
@@ -1491,11 +1472,34 @@
       "installCommand": "npx skills add https://github.com/agentspace-so/skills --skill agentspace"
     },
     {
+      "rank": 64,
+      "source": "mattpocock/skills",
+      "skillId": "to-prd",
+      "name": "to-prd",
+      "installs": 292553,
+      "weeklyInstalls": [
+        27447,
+        29288,
+        38631,
+        36938,
+        30095,
+        26139,
+        32619,
+        36749
+      ],
+      "isOfficial": false,
+      "url": "https://www.skills.sh/mattpocock/skills/to-prd",
+      "description": "Turn the current conversation into a PRD and publish it to the project issue tracker — no interview, just synthesis of what you've already discussed.",
+      "githubUrl": "https://github.com/mattpocock/skills",
+      "topics": [],
+      "installCommand": "npx skills add https://github.com/mattpocock/skills --skill to-prd"
+    },
+    {
       "rank": 65,
       "source": "anthropics/skills",
       "skillId": "skill-creator",
       "name": "skill-creator",
-      "installs": 289367,
+      "installs": 289486,
       "weeklyInstalls": [
         11826,
         14291,
@@ -1520,7 +1524,7 @@
       "source": "juliusbrussee/caveman",
       "skillId": "caveman",
       "name": "caveman",
-      "installs": 288862,
+      "installs": 289055,
       "weeklyInstalls": [
         19741,
         20981,
@@ -1543,7 +1547,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-quotas",
       "name": "azure-quotas",
-      "installs": 284846,
+      "installs": 284918,
       "weeklyInstalls": [
         20228,
         20859,
@@ -1566,7 +1570,7 @@
       "source": "sleekdotdesign/agent-skills",
       "skillId": "sleek-design-mobile-apps",
       "name": "sleek-design-mobile-apps",
-      "installs": 284626,
+      "installs": 284673,
       "weeklyInstalls": [
         12736,
         31454,
@@ -1592,7 +1596,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-doc",
       "name": "lark-doc",
-      "installs": 281050,
+      "installs": 281353,
       "weeklyInstalls": [
         10535,
         20557,
@@ -1615,7 +1619,7 @@
       "source": "mattpocock/skills",
       "skillId": "to-issues",
       "name": "to-issues",
-      "installs": 280241,
+      "installs": 280603,
       "weeklyInstalls": [
         26043,
         28790,
@@ -1638,7 +1642,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-base",
       "name": "lark-base",
-      "installs": 280056,
+      "installs": 280359,
       "weeklyInstalls": [
         10514,
         20577,
@@ -1658,33 +1662,10 @@
     },
     {
       "rank": 72,
-      "source": "larksuite/cli",
-      "skillId": "lark-im",
-      "name": "lark-im",
-      "installs": 279801,
-      "weeklyInstalls": [
-        10455,
-        20454,
-        29144,
-        22950,
-        24654,
-        21809,
-        25425,
-        23230
-      ],
-      "isOfficial": false,
-      "url": "https://www.skills.sh/larksuite/cli/lark-im",
-      "description": "飞书即时通讯：收发消息和管理群聊。发送和回复消息、搜索聊天记录、管理群聊成员、上传下载图片和文件（支持大文件分片下载）、管理表情回复、发送应用内/短信/电话加急、发送和处理交互卡片（Interactive Card）、监听卡片按钮回调（card.action.trigger）。当用户需要发消息、查看或搜索聊天记录、下载聊天中的文件、查看群成员、搜索群、创建群聊或话题群、管理标记数据、管理 Feed 置顶（添加/移除/查询置顶会话）、管理标签数据、处理卡片回调时使用。",
-      "githubUrl": "https://github.com/larksuite/cli/blob/HEAD/skills/lark-im/../lark-shared/SKILL.md",
-      "topics": [],
-      "installCommand": "npx skills add https://github.com/larksuite/cli/blob/HEAD/skills/lark-im/../lark-shared/SKILL.md --skill lark-im"
-    },
-    {
-      "rank": 73,
       "source": "open.feishu.cn",
       "skillId": "lark-okr",
       "name": "lark-okr",
-      "installs": 279707,
+      "installs": 280240,
       "weeklyInstalls": [
         8692,
         11880,
@@ -1703,34 +1684,34 @@
       "installCommand": "npx skills add open.feishu.cn --skill lark-okr"
     },
     {
-      "rank": 74,
+      "rank": 73,
       "source": "larksuite/cli",
-      "skillId": "lark-drive",
-      "name": "lark-drive",
-      "installs": 279421,
+      "skillId": "lark-im",
+      "name": "lark-im",
+      "installs": 280102,
       "weeklyInstalls": [
-        10513,
-        20467,
-        29078,
-        22951,
-        24610,
-        21759,
-        25385,
-        23177
+        10455,
+        20454,
+        29144,
+        22950,
+        24654,
+        21809,
+        25425,
+        23230
       ],
       "isOfficial": false,
-      "url": "https://www.skills.sh/larksuite/cli/lark-drive",
-      "description": "飞书云空间（云盘/云存储）：管理 Drive 文件和文件夹，包含上传/下载、创建文件夹、复制/移动/删除、查看元数据、评论/权限/订阅、标题、版本和本地文件导入。用户需要整理云盘目录、处理云空间资源 URL/token，或导入 Word/Markdown/Excel/CSV/PPTX/.base 为 docx/sheet/bitable/slides 时使用；doubao.com 云空间 URL/token 也按资源路径和 token 路由，不回退 WebFetch。不负责：文档内容编辑（走 lark-doc）、表格/Base 表内数据操作（走 lark-sheets/lark-base）、知识空间节点/成员管理（走 lark-wiki）、原生 Markdown 文件读写/patch/diff（走 lark-markdown）。",
-      "githubUrl": "https://github.com/larksuite/cli/blob/HEAD/skills/lark-drive/../lark-shared/SKILL.md",
+      "url": "https://www.skills.sh/larksuite/cli/lark-im",
+      "description": "飞书即时通讯：收发消息和管理群聊。发送和回复消息、搜索聊天记录、管理群聊成员、上传下载图片和文件（支持大文件分片下载）、管理表情回复、发送应用内/短信/电话加急、发送和处理交互卡片（Interactive Card）、监听卡片按钮回调（card.action.trigger）。当用户需要发消息、查看或搜索聊天记录、下载聊天中的文件、查看群成员、搜索群、创建群聊或话题群、管理标记数据、管理 Feed 置顶（添加/移除/查询置顶会话）、管理标签数据、处理卡片回调时使用。",
+      "githubUrl": "https://github.com/larksuite/cli/blob/HEAD/skills/lark-im/../lark-shared/SKILL.md",
       "topics": [],
-      "installCommand": "npx skills add https://github.com/larksuite/cli/blob/HEAD/skills/lark-drive/../lark-shared/SKILL.md --skill lark-drive"
+      "installCommand": "npx skills add https://github.com/larksuite/cli/blob/HEAD/skills/lark-im/../lark-shared/SKILL.md --skill lark-im"
     },
     {
-      "rank": 75,
+      "rank": 74,
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "kling-3-0",
       "name": "kling-3-0",
-      "installs": 279260,
+      "installs": 279754,
       "weeklyInstalls": [
         0,
         20473,
@@ -1749,11 +1730,34 @@
       "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-agent-skills/tree/main/kling-3-0 --skill kling-3-0"
     },
     {
+      "rank": 75,
+      "source": "larksuite/cli",
+      "skillId": "lark-drive",
+      "name": "lark-drive",
+      "installs": 279724,
+      "weeklyInstalls": [
+        10513,
+        20467,
+        29078,
+        22951,
+        24610,
+        21759,
+        25385,
+        23177
+      ],
+      "isOfficial": false,
+      "url": "https://www.skills.sh/larksuite/cli/lark-drive",
+      "description": "飞书云空间（云盘/云存储）：管理 Drive 文件和文件夹，包含上传/下载、创建文件夹、复制/移动/删除、查看元数据、评论/权限/订阅、标题、版本和本地文件导入。用户需要整理云盘目录、处理云空间资源 URL/token，或导入 Word/Markdown/Excel/CSV/PPTX/.base 为 docx/sheet/bitable/slides 时使用；doubao.com 云空间 URL/token 也按资源路径和 token 路由，不回退 WebFetch。不负责：文档内容编辑（走 lark-doc）、表格/Base 表内数据操作（走 lark-sheets/lark-base）、知识空间节点/成员管理（走 lark-wiki）、原生 Markdown 文件读写/patch/diff（走 lark-markdown）。",
+      "githubUrl": "https://github.com/larksuite/cli/blob/HEAD/skills/lark-drive/../lark-shared/SKILL.md",
+      "topics": [],
+      "installCommand": "npx skills add https://github.com/larksuite/cli/blob/HEAD/skills/lark-drive/../lark-shared/SKILL.md --skill lark-drive"
+    },
+    {
       "rank": 76,
       "source": "larksuite/cli",
       "skillId": "lark-shared",
       "name": "lark-shared",
-      "installs": 279245,
+      "installs": 279545,
       "weeklyInstalls": [
         10466,
         20461,
@@ -1776,7 +1780,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-calendar",
       "name": "lark-calendar",
-      "installs": 278535,
+      "installs": 278836,
       "weeklyInstalls": [
         10484,
         20457,
@@ -1799,7 +1803,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-wiki",
       "name": "lark-wiki",
-      "installs": 278502,
+      "installs": 278801,
       "weeklyInstalls": [
         10405,
         20400,
@@ -1822,7 +1826,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-whiteboard",
       "name": "lark-whiteboard",
-      "installs": 278410,
+      "installs": 278711,
       "weeklyInstalls": [
         10419,
         20428,
@@ -1845,7 +1849,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-sheets",
       "name": "lark-sheets",
-      "installs": 278338,
+      "installs": 278639,
       "weeklyInstalls": [
         10407,
         20436,
@@ -1868,7 +1872,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-task",
       "name": "lark-task",
-      "installs": 278155,
+      "installs": 278455,
       "weeklyInstalls": [
         10396,
         20467,
@@ -1891,7 +1895,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-mail",
       "name": "lark-mail",
-      "installs": 278044,
+      "installs": 278346,
       "weeklyInstalls": [
         10430,
         20438,
@@ -1914,7 +1918,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-vc",
       "name": "lark-vc",
-      "installs": 277781,
+      "installs": 278082,
       "weeklyInstalls": [
         10423,
         20384,
@@ -1937,7 +1941,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-minutes",
       "name": "lark-minutes",
-      "installs": 277758,
+      "installs": 278059,
       "weeklyInstalls": [
         10440,
         20395,
@@ -1960,7 +1964,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-event",
       "name": "lark-event",
-      "installs": 277592,
+      "installs": 277893,
       "weeklyInstalls": [
         10421,
         20385,
@@ -1980,33 +1984,10 @@
     },
     {
       "rank": 86,
-      "source": "microsoft/azure-skills",
-      "skillId": "azure-upgrade",
-      "name": "azure-upgrade",
-      "installs": 277342,
-      "weeklyInstalls": [
-        20305,
-        20926,
-        19957,
-        18054,
-        14495,
-        16782,
-        15019,
-        15752
-      ],
-      "isOfficial": true,
-      "url": "https://www.skills.sh/microsoft/azure-skills/azure-upgrade",
-      "description": "Assess and upgrade Azure workloads between plans, tiers, or SKUs, or modernize Azure SDK dependencies in source code. WHEN: upgrade Consumption to Flex Consumption, upgrade Azure Functions plan, change hosting plan, function app SKU, migrate App Service to Container Apps, modernize legacy Azure Java SDKs (com.microsoft.azure to com.azure), migrate Azure Cache for Redis (ACR/ACRE) to Azure Managed Redis (AMR).",
-      "githubUrl": "https://github.com/microsoft/azure-skills",
-      "topics": [],
-      "installCommand": "npx skills add https://github.com/microsoft/azure-skills --skill azure-upgrade"
-    },
-    {
-      "rank": 87,
       "source": "larksuite/cli",
       "skillId": "lark-contact",
       "name": "lark-contact",
-      "installs": 277321,
+      "installs": 277620,
       "weeklyInstalls": [
         10417,
         20417,
@@ -2025,11 +2006,11 @@
       "installCommand": "npx skills add https://github.com/larksuite/cli/blob/HEAD/skills/lark-contact/../lark-shared/SKILL.md --skill lark-contact"
     },
     {
-      "rank": 88,
+      "rank": 87,
       "source": "larksuite/cli",
       "skillId": "lark-workflow-meeting-summary",
       "name": "lark-workflow-meeting-summary",
-      "installs": 277186,
+      "installs": 277488,
       "weeklyInstalls": [
         10387,
         20352,
@@ -2048,11 +2029,34 @@
       "installCommand": "npx skills add https://github.com/larksuite/cli/blob/HEAD/skills/lark-workflow-meeting-summary/../lark-shared/SKILL.md --skill lark-workflow-meeting-summary"
     },
     {
+      "rank": 88,
+      "source": "microsoft/azure-skills",
+      "skillId": "azure-upgrade",
+      "name": "azure-upgrade",
+      "installs": 277413,
+      "weeklyInstalls": [
+        20305,
+        20926,
+        19957,
+        18054,
+        14495,
+        16782,
+        15019,
+        15752
+      ],
+      "isOfficial": true,
+      "url": "https://www.skills.sh/microsoft/azure-skills/azure-upgrade",
+      "description": "Assess and upgrade Azure workloads between plans, tiers, or SKUs, or modernize Azure SDK dependencies in source code. WHEN: upgrade Consumption to Flex Consumption, upgrade Azure Functions plan, change hosting plan, function app SKU, migrate App Service to Container Apps, modernize legacy Azure Java SDKs (com.microsoft.azure to com.azure), migrate Azure Cache for Redis (ACR/ACRE) to Azure Managed Redis (AMR).",
+      "githubUrl": "https://github.com/microsoft/azure-skills",
+      "topics": [],
+      "installCommand": "npx skills add https://github.com/microsoft/azure-skills --skill azure-upgrade"
+    },
+    {
       "rank": 89,
       "source": "larksuite/cli",
       "skillId": "lark-workflow-standup-report",
       "name": "lark-workflow-standup-report",
-      "installs": 276795,
+      "installs": 277094,
       "weeklyInstalls": [
         10325,
         20299,
@@ -2075,7 +2079,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-openapi-explorer",
       "name": "lark-openapi-explorer",
-      "installs": 276710,
+      "installs": 277009,
       "weeklyInstalls": [
         10329,
         20310,
@@ -2098,7 +2102,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-skill-maker",
       "name": "lark-skill-maker",
-      "installs": 276562,
+      "installs": 276861,
       "weeklyInstalls": [
         10315,
         20288,
@@ -2121,7 +2125,7 @@
       "source": "mattpocock/skills",
       "skillId": "setup-matt-pocock-skills",
       "name": "setup-matt-pocock-skills",
-      "installs": 272467,
+      "installs": 272837,
       "weeklyInstalls": [
         23270,
         27620,
@@ -2144,7 +2148,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "codex-pet",
       "name": "codex-pet",
-      "installs": 267605,
+      "installs": 268084,
       "weeklyInstalls": [
         0,
         8459,
@@ -2167,7 +2171,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-markdown",
       "name": "lark-markdown",
-      "installs": 264493,
+      "installs": 265026,
       "weeklyInstalls": [
         2299,
         11881,
@@ -2190,7 +2194,7 @@
       "source": "mattpocock/skills",
       "skillId": "triage",
       "name": "triage",
-      "installs": 254875,
+      "installs": 255224,
       "weeklyInstalls": [
         21527,
         25580,
@@ -2213,7 +2217,7 @@
       "source": "supabase/agent-skills",
       "skillId": "supabase-postgres-best-practices",
       "name": "supabase-postgres-best-practices",
-      "installs": 254028,
+      "installs": 254127,
       "weeklyInstalls": [
         15543,
         15049,
@@ -2238,7 +2242,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-enterprise-infra-planner",
       "name": "azure-enterprise-infra-planner",
-      "installs": 251406,
+      "installs": 251477,
       "weeklyInstalls": [
         20186,
         20810,
@@ -2261,7 +2265,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-approval",
       "name": "lark-approval",
-      "installs": 251079,
+      "installs": 251380,
       "weeklyInstalls": [
         10339,
         20307,
@@ -2284,7 +2288,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "ai-video-generation",
       "name": "ai-video-generation",
-      "installs": 248123,
+      "installs": 248623,
       "weeklyInstalls": [
         0,
         0,
@@ -2307,7 +2311,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "ai-image-generation",
       "name": "ai-image-generation",
-      "installs": 247633,
+      "installs": 248126,
       "weeklyInstalls": [
         0,
         0,
@@ -2330,7 +2334,7 @@
       "source": "xixu-me/skills",
       "skillId": "github-actions-docs",
       "name": "github-actions-docs",
-      "installs": 247314,
+      "installs": 247575,
       "weeklyInstalls": [
         22103,
         26117,
@@ -2353,7 +2357,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "runcomfy-cli",
       "name": "runcomfy-cli",
-      "installs": 246151,
+      "installs": 246635,
       "weeklyInstalls": [
         0,
         0,
@@ -2376,7 +2380,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "ai-avatar-video",
       "name": "ai-avatar-video",
-      "installs": 245809,
+      "installs": 246298,
       "weeklyInstalls": [
         0,
         0,
@@ -2399,7 +2403,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "face-swap",
       "name": "face-swap",
-      "installs": 245714,
+      "installs": 246189,
       "weeklyInstalls": [
         0,
         0,
@@ -2422,7 +2426,7 @@
       "source": "obra/superpowers",
       "skillId": "brainstorming",
       "name": "brainstorming",
-      "installs": 245615,
+      "installs": 245769,
       "weeklyInstalls": [
         11012,
         12758,
@@ -2444,33 +2448,10 @@
     },
     {
       "rank": 106,
-      "source": "microsoft/azure-skills",
-      "skillId": "azure-kubernetes",
-      "name": "azure-kubernetes",
-      "installs": 244281,
-      "weeklyInstalls": [
-        20236,
-        20829,
-        20065,
-        18054,
-        14518,
-        16786,
-        15008,
-        15744
-      ],
-      "isOfficial": true,
-      "url": "https://www.skills.sh/microsoft/azure-skills/azure-kubernetes",
-      "description": "Plan, create, and configure production-ready Azure Kubernetes Service (AKS) clusters. Covers Day-0 checklist, SKU selection (Automatic vs Standard), networking options (private API server, Azure CNI Overlay, egress configuration), security, and operations (autoscaling, upgrade strategy, cost analysis). WHEN: create AKS environment, provision AKS, enable AKS observability, design AKS networking, choose AKS SKU, secure AKS, optimize AKS, AKS spot nodes, AKS cluster-autoscaler, rightsize AKS pod, pod rightsizing,...",
-      "githubUrl": "https://github.com/microsoft/azure-skills/blob/HEAD/.github/plugins/azure-skills/skills/azure-kubernetes/./references/cli-reference.md",
-      "topics": [],
-      "installCommand": "npx skills add https://github.com/microsoft/azure-skills/blob/HEAD/.github/plugins/azure-skills/skills/azure-kubernetes/./references/cli-reference.md --skill azure-kubernetes"
-    },
-    {
-      "rank": 107,
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "video-inpainting",
       "name": "video-inpainting",
-      "installs": 244030,
+      "installs": 244524,
       "weeklyInstalls": [
         0,
         0,
@@ -2489,11 +2470,34 @@
       "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-agent-skills --skill video-inpainting"
     },
     {
+      "rank": 107,
+      "source": "microsoft/azure-skills",
+      "skillId": "azure-kubernetes",
+      "name": "azure-kubernetes",
+      "installs": 244353,
+      "weeklyInstalls": [
+        20236,
+        20829,
+        20065,
+        18054,
+        14518,
+        16786,
+        15008,
+        15744
+      ],
+      "isOfficial": true,
+      "url": "https://www.skills.sh/microsoft/azure-skills/azure-kubernetes",
+      "description": "Plan, create, and configure production-ready Azure Kubernetes Service (AKS) clusters. Covers Day-0 checklist, SKU selection (Automatic vs Standard), networking options (private API server, Azure CNI Overlay, egress configuration), security, and operations (autoscaling, upgrade strategy, cost analysis). WHEN: create AKS environment, provision AKS, enable AKS observability, design AKS networking, choose AKS SKU, secure AKS, optimize AKS, AKS spot nodes, AKS cluster-autoscaler, rightsize AKS pod, pod rightsizing,...",
+      "githubUrl": "https://github.com/microsoft/azure-skills/blob/HEAD/.github/plugins/azure-skills/skills/azure-kubernetes/./references/cli-reference.md",
+      "topics": [],
+      "installCommand": "npx skills add https://github.com/microsoft/azure-skills/blob/HEAD/.github/plugins/azure-skills/skills/azure-kubernetes/./references/cli-reference.md --skill azure-kubernetes"
+    },
+    {
       "rank": 108,
       "source": "open.feishu.cn",
       "skillId": "lark-vc-agent",
       "name": "lark-vc-agent",
-      "installs": 243567,
+      "installs": 244099,
       "weeklyInstalls": [
         0,
         0,
@@ -2514,32 +2518,9 @@
     {
       "rank": 109,
       "source": "agentspace-so/runcomfy-agent-skills",
-      "skillId": "controlnet-pose",
-      "name": "controlnet-pose",
-      "installs": 243523,
-      "weeklyInstalls": [
-        0,
-        0,
-        35224,
-        30130,
-        40480,
-        40579,
-        27901,
-        38440
-      ],
-      "isOfficial": false,
-      "url": "https://www.skills.sh/agentspace-so/runcomfy-agent-skills/controlnet-pose",
-      "description": "Pose-conditioned generation on RunComfy via the `runcomfy` CLI. Routes across Kling 2-6 Motion Control Pro / Standard (transfer the motion / blocking of a reference video onto a target character), community Wan 2-2 Animate (audio-driven character animation with pose conditioning), and Z-Image Turbo ControlNet LoRA (pose-conditioned image generation from an OpenPose / DWPose / canny / depth control image). Picks the right route based on video vs still and stylized vs photoreal. Triggers on \"controlnet\", \"control...",
-      "githubUrl": "https://github.com/agentspace-so/runcomfy-agent-skills",
-      "topics": [],
-      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-agent-skills --skill controlnet-pose"
-    },
-    {
-      "rank": 110,
-      "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "image-inpainting",
       "name": "image-inpainting",
-      "installs": 243515,
+      "installs": 244010,
       "weeklyInstalls": [
         0,
         0,
@@ -2558,11 +2539,34 @@
       "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-agent-skills --skill image-inpainting"
     },
     {
+      "rank": 110,
+      "source": "agentspace-so/runcomfy-agent-skills",
+      "skillId": "controlnet-pose",
+      "name": "controlnet-pose",
+      "installs": 244008,
+      "weeklyInstalls": [
+        0,
+        0,
+        35224,
+        30130,
+        40480,
+        40579,
+        27901,
+        38440
+      ],
+      "isOfficial": false,
+      "url": "https://www.skills.sh/agentspace-so/runcomfy-agent-skills/controlnet-pose",
+      "description": "Pose-conditioned generation on RunComfy via the `runcomfy` CLI. Routes across Kling 2-6 Motion Control Pro / Standard (transfer the motion / blocking of a reference video onto a target character), community Wan 2-2 Animate (audio-driven character animation with pose conditioning), and Z-Image Turbo ControlNet LoRA (pose-conditioned image generation from an OpenPose / DWPose / canny / depth control image). Picks the right route based on video vs still and stylized vs photoreal. Triggers on \"controlnet\", \"control...",
+      "githubUrl": "https://github.com/agentspace-so/runcomfy-agent-skills",
+      "topics": [],
+      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-agent-skills --skill controlnet-pose"
+    },
+    {
       "rank": 111,
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "lipsync",
       "name": "lipsync",
-      "installs": 243376,
+      "installs": 243861,
       "weeklyInstalls": [
         0,
         0,
@@ -2585,7 +2589,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "video-extend",
       "name": "video-extend",
-      "installs": 243304,
+      "installs": 243767,
       "weeklyInstalls": [
         0,
         0,
@@ -2608,7 +2612,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "image-outpainting",
       "name": "image-outpainting",
-      "installs": 243154,
+      "installs": 243655,
       "weeklyInstalls": [
         0,
         0,
@@ -2631,7 +2635,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "relight",
       "name": "relight",
-      "installs": 242935,
+      "installs": 243421,
       "weeklyInstalls": [
         0,
         0,
@@ -2654,7 +2658,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "elevenlabs-music-generation",
       "name": "elevenlabs-music-generation",
-      "installs": 242862,
+      "installs": 243344,
       "weeklyInstalls": [
         0,
         0,
@@ -2674,33 +2678,10 @@
     },
     {
       "rank": 116,
-      "source": "xixu-me/skills",
-      "skillId": "openclaw-secure-linux-cloud",
-      "name": "openclaw-secure-linux-cloud",
-      "installs": 242823,
-      "weeklyInstalls": [
-        21893,
-        25731,
-        22640,
-        19921,
-        18713,
-        16082,
-        15955,
-        15117
-      ],
-      "isOfficial": false,
-      "url": "https://www.skills.sh/xixu-me/skills/openclaw-secure-linux-cloud",
-      "description": "Use when self-hosting OpenClaw on a cloud server, hardening a remote OpenClaw gateway, choosing between SSH tunneling, Tailscale, or reverse-proxy exposure, or reviewing Podman, pairing, sandboxing, token auth, and tool-permission defaults for a secure personal deployment.",
-      "githubUrl": "https://github.com/xixu-me/skills/blob/HEAD/skills/openclaw-secure-linux-cloud/./references/REFERENCE.md",
-      "topics": [],
-      "installCommand": "npx skills add https://github.com/xixu-me/skills/blob/HEAD/skills/openclaw-secure-linux-cloud/./references/REFERENCE.md --skill openclaw-secure-linux-cloud"
-    },
-    {
-      "rank": 117,
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "video-outpainting",
       "name": "video-outpainting",
-      "installs": 242813,
+      "installs": 243288,
       "weeklyInstalls": [
         0,
         0,
@@ -2719,11 +2700,34 @@
       "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-agent-skills --skill video-outpainting"
     },
     {
+      "rank": 117,
+      "source": "xixu-me/skills",
+      "skillId": "openclaw-secure-linux-cloud",
+      "name": "openclaw-secure-linux-cloud",
+      "installs": 243076,
+      "weeklyInstalls": [
+        21893,
+        25731,
+        22640,
+        19921,
+        18713,
+        16082,
+        15955,
+        15117
+      ],
+      "isOfficial": false,
+      "url": "https://www.skills.sh/xixu-me/skills/openclaw-secure-linux-cloud",
+      "description": "Use when self-hosting OpenClaw on a cloud server, hardening a remote OpenClaw gateway, choosing between SSH tunneling, Tailscale, or reverse-proxy exposure, or reviewing Podman, pairing, sandboxing, token auth, and tool-permission defaults for a secure personal deployment.",
+      "githubUrl": "https://github.com/xixu-me/skills/blob/HEAD/skills/openclaw-secure-linux-cloud/./references/REFERENCE.md",
+      "topics": [],
+      "installCommand": "npx skills add https://github.com/xixu-me/skills/blob/HEAD/skills/openclaw-secure-linux-cloud/./references/REFERENCE.md --skill openclaw-secure-linux-cloud"
+    },
+    {
       "rank": 118,
       "source": "xixu-me/skills",
       "skillId": "secure-linux-web-hosting",
       "name": "secure-linux-web-hosting",
-      "installs": 242632,
+      "installs": 242886,
       "weeklyInstalls": [
         21868,
         25715,
@@ -2746,7 +2750,7 @@
       "source": "xixu-me/skills",
       "skillId": "skills-cli",
       "name": "skills-cli",
-      "installs": 242445,
+      "installs": 242698,
       "weeklyInstalls": [
         21858,
         25721,
@@ -2769,7 +2773,7 @@
       "source": "xixu-me/skills",
       "skillId": "running-claude-code-via-litellm-copilot",
       "name": "running-claude-code-via-litellm-copilot",
-      "installs": 242345,
+      "installs": 242598,
       "weeklyInstalls": [
         21853,
         25708,
@@ -2792,7 +2796,7 @@
       "source": "xixu-me/skills",
       "skillId": "opensource-guide-coach",
       "name": "opensource-guide-coach",
-      "installs": 242225,
+      "installs": 242478,
       "weeklyInstalls": [
         21852,
         25694,
@@ -2815,7 +2819,7 @@
       "source": "xixu-me/skills",
       "skillId": "readme-i18n",
       "name": "readme-i18n",
-      "installs": 242042,
+      "installs": 242297,
       "weeklyInstalls": [
         21912,
         25742,
@@ -2838,7 +2842,7 @@
       "source": "xixu-me/skills",
       "skillId": "use-my-browser",
       "name": "use-my-browser",
-      "installs": 240947,
+      "installs": 241200,
       "weeklyInstalls": [
         21960,
         25820,
@@ -2861,7 +2865,7 @@
       "source": "xixu-me/skills",
       "skillId": "xget",
       "name": "xget",
-      "installs": 239257,
+      "installs": 239511,
       "weeklyInstalls": [
         21848,
         25689,
@@ -2884,7 +2888,7 @@
       "source": "xixu-me/skills",
       "skillId": "tzst",
       "name": "tzst",
-      "installs": 239211,
+      "installs": 239464,
       "weeklyInstalls": [
         21837,
         25683,
@@ -2907,7 +2911,7 @@
       "source": "xixu-me/skills",
       "skillId": "xdrop",
       "name": "xdrop",
-      "installs": 238949,
+      "installs": 239202,
       "weeklyInstalls": [
         21838,
         25681,
@@ -2930,7 +2934,7 @@
       "source": "nextlevelbuilder/ui-ux-pro-max-skill",
       "skillId": "ui-ux-pro-max",
       "name": "ui-ux-pro-max",
-      "installs": 237746,
+      "installs": 237850,
       "weeklyInstalls": [
         10499,
         11062,
@@ -2955,7 +2959,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "ai-music",
       "name": "ai-music",
-      "installs": 234716,
+      "installs": 235186,
       "weeklyInstalls": [
         0,
         0,
@@ -2978,7 +2982,7 @@
       "source": "agentspace-so/runcomfy-agent-skills",
       "skillId": "ace-step",
       "name": "ace-step",
-      "installs": 234471,
+      "installs": 234967,
       "weeklyInstalls": [
         0,
         0,
@@ -3001,7 +3005,7 @@
       "source": "mattpocock/skills",
       "skillId": "handoff",
       "name": "handoff",
-      "installs": 234149,
+      "installs": 234529,
       "weeklyInstalls": [
         0,
         86,
@@ -3024,7 +3028,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-slides",
       "name": "lark-slides",
-      "installs": 230948,
+      "installs": 231249,
       "weeklyInstalls": [
         10375,
         20337,
@@ -3047,7 +3051,7 @@
       "source": "mattpocock/skills",
       "skillId": "diagnose",
       "name": "diagnose",
-      "installs": 230500,
+      "installs": 230506,
       "weeklyInstalls": [
         25461,
         28784,
@@ -3070,7 +3074,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-attendance",
       "name": "lark-attendance",
-      "installs": 229717,
+      "installs": 230016,
       "weeklyInstalls": [
         10293,
         20263,
@@ -3093,7 +3097,7 @@
       "source": "mattpocock/skills",
       "skillId": "prototype",
       "name": "prototype",
-      "installs": 229320,
+      "installs": 229680,
       "weeklyInstalls": [
         0,
         16208,
@@ -3116,7 +3120,7 @@
       "source": "vercel-labs/agent-skills",
       "skillId": "vercel-composition-patterns",
       "name": "vercel-composition-patterns",
-      "installs": 226484,
+      "installs": 226559,
       "weeklyInstalls": [
         7701,
         9167,
@@ -3143,7 +3147,7 @@
       "source": "mattpocock/skills",
       "skillId": "write-a-skill",
       "name": "write-a-skill",
-      "installs": 222460,
+      "installs": 222465,
       "weeklyInstalls": [
         24313,
         26395,
@@ -3166,7 +3170,7 @@
       "source": "mattpocock/skills",
       "skillId": "zoom-out",
       "name": "zoom-out",
-      "installs": 221871,
+      "installs": 221877,
       "weeklyInstalls": [
         25143,
         27739,
@@ -3189,7 +3193,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-cost",
       "name": "azure-cost",
-      "installs": 219756,
+      "installs": 219827,
       "weeklyInstalls": [
         20076,
         20726,
@@ -3212,7 +3216,7 @@
       "source": "mattpocock/skills",
       "skillId": "caveman",
       "name": "caveman",
-      "installs": 217056,
+      "installs": 217061,
       "weeklyInstalls": [
         24223,
         26079,
@@ -3235,7 +3239,7 @@
       "source": "larksuite/cli",
       "skillId": "lark-okr",
       "name": "lark-okr",
-      "installs": 215259,
+      "installs": 215558,
       "weeklyInstalls": [
         10317,
         20290,
@@ -3281,7 +3285,7 @@
       "source": "roin-orca/skills",
       "skillId": "simple",
       "name": "simple",
-      "installs": 210144,
+      "installs": 210302,
       "weeklyInstalls": [
         13305,
         13275,
@@ -3304,7 +3308,7 @@
       "source": "open.feishu.cn",
       "skillId": "lark-apps",
       "name": "lark-apps",
-      "installs": 208372,
+      "installs": 208904,
       "weeklyInstalls": [
         0,
         0,
@@ -3327,7 +3331,7 @@
       "source": "shadcn/ui",
       "skillId": "shadcn",
       "name": "shadcn",
-      "installs": 207994,
+      "installs": 208096,
       "weeklyInstalls": [
         11825,
         11728,
@@ -3352,7 +3356,7 @@
       "source": "microsoft/azure-skills",
       "skillId": "azure-cost-optimization",
       "name": "azure-cost-optimization",
-      "installs": 207949,
+      "installs": 207951,
       "weeklyInstalls": [
         1295,
         1026,
@@ -3375,7 +3379,7 @@
       "source": "runcomfy-com/skills",
       "skillId": "ai-image-generation",
       "name": "ai-image-generation",
-      "installs": 197955,
+      "installs": 198413,
       "weeklyInstalls": [
         0,
         0,
@@ -3398,7 +3402,7 @@
       "source": "doany-ai/skills",
       "skillId": "controlnet-pose",
       "name": "controlnet-pose",
-      "installs": 197906,
+      "installs": 198338,
       "weeklyInstalls": [
         0,
         0,
@@ -3421,7 +3425,7 @@
       "source": "doany-ai/skills",
       "skillId": "image-outpainting",
       "name": "image-outpainting",
-      "installs": 197869,
+      "installs": 198317,
       "weeklyInstalls": [
         0,
         0,
@@ -3444,7 +3448,7 @@
       "source": "runcomfy-com/skills",
       "skillId": "flux-2-klein",
       "name": "flux-2-klein",
-      "installs": 197770,
+      "installs": 198208,
       "weeklyInstalls": [
         0,
         0,
@@ -3465,55 +3469,9 @@
     {
       "rank": 150,
       "source": "runcomfy-com/skills",
-      "skillId": "elevenlabs-music-generation",
-      "name": "elevenlabs-music-generation",
-      "installs": 197733,
-      "weeklyInstalls": [
-        0,
-        0,
-        0,
-        34274,
-        37285,
-        37252,
-        24836,
-        35521
-      ],
-      "isOfficial": false,
-      "url": "https://www.skills.sh/runcomfy-com/skills/elevenlabs-music-generation",
-      "description": "Generate full songs and instrumental tracks with ElevenLabs Music on RunComfy via the `runcomfy` CLI. ElevenLabs Music turns a style description plus structured lyrics into studio-quality 44.1 kHz stereo audio — 5 seconds to 5 minutes — with section-level control (Intro / Verse / Chorus / Bridge), multilingual vocals, and commercial-friendly output. Generate a backing track, a full vocal song, a jingle, a podcast intro, a game loop, or an instrumental bed. Calls `runcomfy run...",
-      "githubUrl": "https://github.com/runcomfy-com/skills",
-      "topics": [],
-      "installCommand": "npx skills add https://github.com/runcomfy-com/skills --skill elevenlabs-music-generation"
-    },
-    {
-      "rank": 151,
-      "source": "runcomfy-com/skills",
-      "skillId": "codex-pet",
-      "name": "codex-pet",
-      "installs": 197725,
-      "weeklyInstalls": [
-        0,
-        0,
-        0,
-        34321,
-        37385,
-        37304,
-        24710,
-        35371
-      ],
-      "isOfficial": false,
-      "url": "https://www.skills.sh/runcomfy-com/skills/codex-pet",
-      "description": "Codex Pet generator on RunComfy. Build a Codex-compatible Codex Pet spritesheet.webp + pet.json from a single reference image, drop it into `${CODEX_HOME:-$HOME/.codex}/pets/ /` and Codex picks it up as a custom Codex Pet next to the 8 built-ins. This skill produces the exact Codex Pet atlas Codex expects (1536x1872 PNG/WebP, 8 cols x 9 rows, 192x208 cells, 9 animation states — idle, running-right, running-left, waving, jumping, failed, waiting, running, review). Calls OpenAI GPT Image 2 edit ONCE via the local...",
-      "githubUrl": "https://github.com/runcomfy-com/skills",
-      "topics": [],
-      "installCommand": "npx skills add https://github.com/runcomfy-com/skills --skill codex-pet"
-    },
-    {
-      "rank": 152,
-      "source": "runcomfy-com/skills",
       "skillId": "face-swap",
       "name": "face-swap",
-      "installs": 197716,
+      "installs": 198182,
       "weeklyInstalls": [
         0,
         0,
@@ -3532,57 +3490,57 @@
       "installCommand": "npx skills add https://github.com/runcomfy-com/skills --skill face-swap"
     },
     {
-      "rank": 153,
+      "rank": 151,
       "source": "runcomfy-com/skills",
-      "skillId": "gpt-image-2",
-      "name": "gpt-image-2",
-      "installs": 197690,
+      "skillId": "elevenlabs-music-generation",
+      "name": "elevenlabs-music-generation",
+      "installs": 198178,
       "weeklyInstalls": [
         0,
         0,
         0,
-        34264,
-        37458,
-        37251,
-        24828,
-        35368
+        34274,
+        37285,
+        37252,
+        24836,
+        35521
       ],
       "isOfficial": false,
-      "url": "https://www.skills.sh/runcomfy-com/skills/gpt-image-2",
-      "description": "Generate and edit images with OpenAI GPT Image 2 (ChatGPT Images 2.0) on RunComfy. Documents GPT Image 2's strengths (embedded text, logos, multilingual typography, instruction precision), its 3 fixed sizes, edit-with-preservation language, and when to route to a sibling (Flux 2 / Nano Banana Pro / Seedream) instead. Calls `runcomfy run openai/gpt-image-2/text-to-image` or `/edit` through the local RunComfy CLI. Triggers on \"gpt image 2\", \"gpt-image-2\", \"ChatGPT Images 2\", \"image 2\", or any explicit ask to...",
-      "githubUrl": "https://github.com/agentspace-so/runcomfy-skills/tree/main/gpt-image-2",
+      "url": "https://www.skills.sh/runcomfy-com/skills/elevenlabs-music-generation",
+      "description": "Generate full songs and instrumental tracks with ElevenLabs Music on RunComfy via the `runcomfy` CLI. ElevenLabs Music turns a style description plus structured lyrics into studio-quality 44.1 kHz stereo audio — 5 seconds to 5 minutes — with section-level control (Intro / Verse / Chorus / Bridge), multilingual vocals, and commercial-friendly output. Generate a backing track, a full vocal song, a jingle, a podcast intro, a game loop, or an instrumental bed. Calls `runcomfy run...",
+      "githubUrl": "https://github.com/runcomfy-com/skills",
       "topics": [],
-      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/gpt-image-2 --skill gpt-image-2"
+      "installCommand": "npx skills add https://github.com/runcomfy-com/skills --skill elevenlabs-music-generation"
     },
     {
-      "rank": 154,
-      "source": "doany-ai/skills",
-      "skillId": "runcomfy-cli",
-      "name": "runcomfy-cli",
-      "installs": 197686,
+      "rank": 152,
+      "source": "runcomfy-com/skills",
+      "skillId": "codex-pet",
+      "name": "codex-pet",
+      "installs": 198175,
       "weeklyInstalls": [
         0,
         0,
         0,
-        34149,
-        37353,
-        37332,
-        25005,
-        35361
+        34321,
+        37385,
+        37304,
+        24710,
+        35371
       ],
       "isOfficial": false,
-      "url": "https://www.skills.sh/doany-ai/skills/runcomfy-cli",
-      "description": "Run any model on RunComfy from the command line. The `runcomfy` CLI is one binary, one auth, hundreds of model endpoints — image generation, image edit, video generation, image-to-video, lip-sync, face swap, video edit, inpainting, outpainting, extend, ControlNet, relight, upscale, LoRA training and more. Submit a request, poll for status, download the output. This skill teaches the agent how to install, authenticate, discover model schemas, invoke models, stream / poll / no-wait, script in JSON output mode, and...",
-      "githubUrl": "https://github.com/doany-ai/skills",
+      "url": "https://www.skills.sh/runcomfy-com/skills/codex-pet",
+      "description": "Codex Pet generator on RunComfy. Build a Codex-compatible Codex Pet spritesheet.webp + pet.json from a single reference image, drop it into `${CODEX_HOME:-$HOME/.codex}/pets/ /` and Codex picks it up as a custom Codex Pet next to the 8 built-ins. This skill produces the exact Codex Pet atlas Codex expects (1536x1872 PNG/WebP, 8 cols x 9 rows, 192x208 cells, 9 animation states — idle, running-right, running-left, waving, jumping, failed, waiting, running, review). Calls OpenAI GPT Image 2 edit ONCE via the local...",
+      "githubUrl": "https://github.com/runcomfy-com/skills",
       "topics": [],
-      "installCommand": "npx skills add https://github.com/doany-ai/skills --skill runcomfy-cli"
+      "installCommand": "npx skills add https://github.com/runcomfy-com/skills --skill codex-pet"
     },
     {
-      "rank": 155,
+      "rank": 153,
       "source": "runcomfy-com/skills",
       "skillId": "seedance-v2",
       "name": "seedance-v2",
-      "installs": 197674,
+      "installs": 198171,
       "weeklyInstalls": [
         0,
         0,
@@ -3601,80 +3559,57 @@
       "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/seedance-v2 --skill seedance-v2"
     },
     {
-      "rank": 156,
-      "source": "doany-ai/skills",
-      "skillId": "nano-banana-2",
-      "name": "nano-banana-2",
-      "installs": 197656,
-      "weeklyInstalls": [
-        0,
-        0,
-        0,
-        34142,
-        37293,
-        37290,
-        24958,
-        35441
-      ],
-      "isOfficial": false,
-      "url": "https://www.skills.sh/doany-ai/skills/nano-banana-2",
-      "description": "Generate images with Google Nano Banana 2 (Gemini-family flash-tier text-to-image) on RunComfy — bundled with the model's documented prompting patterns so the skill gets sharper output than naive prompting against the same model. Documents Nano Banana 2's strengths (rapid iteration, in-image typography rendering, predictable framing, optional web-grounded context), the resolution-tier pricing, the safety-tolerance dial, and when to route to Nano Banana Pro / GPT Image 2 / Flux 2 / Seedream instead. Calls...",
-      "githubUrl": "https://github.com/agentspace-so/runcomfy-skills/tree/main/nano-banana-2",
-      "topics": [],
-      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/nano-banana-2 --skill nano-banana-2"
-    },
-    {
-      "rank": 157,
-      "source": "doany-ai/skills",
+      "rank": 154,
+      "source": "runcomfy-com/skills",
       "skillId": "gpt-image-2",
       "name": "gpt-image-2",
-      "installs": 197654,
+      "installs": 198157,
       "weeklyInstalls": [
         0,
         0,
         0,
-        33888,
-        37441,
-        37243,
-        24872,
-        35479
+        34264,
+        37458,
+        37251,
+        24828,
+        35368
       ],
       "isOfficial": false,
-      "url": "https://www.skills.sh/doany-ai/skills/gpt-image-2",
+      "url": "https://www.skills.sh/runcomfy-com/skills/gpt-image-2",
       "description": "Generate and edit images with OpenAI GPT Image 2 (ChatGPT Images 2.0) on RunComfy. Documents GPT Image 2's strengths (embedded text, logos, multilingual typography, instruction precision), its 3 fixed sizes, edit-with-preservation language, and when to route to a sibling (Flux 2 / Nano Banana Pro / Seedream) instead. Calls `runcomfy run openai/gpt-image-2/text-to-image` or `/edit` through the local RunComfy CLI. Triggers on \"gpt image 2\", \"gpt-image-2\", \"ChatGPT Images 2\", \"image 2\", or any explicit ask to...",
       "githubUrl": "https://github.com/agentspace-so/runcomfy-skills/tree/main/gpt-image-2",
       "topics": [],
       "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/gpt-image-2 --skill gpt-image-2"
     },
     {
-      "rank": 158,
+      "rank": 155,
       "source": "doany-ai/skills",
-      "skillId": "seedance-v2",
-      "name": "seedance-v2",
-      "installs": 197648,
+      "skillId": "runcomfy-cli",
+      "name": "runcomfy-cli",
+      "installs": 198150,
       "weeklyInstalls": [
         0,
         0,
         0,
-        34170,
-        37307,
-        37117,
-        24802,
-        35585
+        34149,
+        37353,
+        37332,
+        25005,
+        35361
       ],
       "isOfficial": false,
-      "url": "https://www.skills.sh/doany-ai/skills/seedance-v2",
-      "description": "Generate cinematic short-form video with ByteDance Seedance 2.0 Pro on RunComfy. Documents Seedance 2.0 Pro's strengths (multi-modal references — up to 9 images, 3 videos, 3 audio — synchronized in-pass audio with natural lip-sync, cinematic motion refinement), the 4–15s duration schema, and when to route to HappyHorse 1.0 / Wan 2.7 / Kling instead. Calls `runcomfy run bytedance/seedance-v2/pro` through the local RunComfy CLI. Triggers on \"seedance\", \"seedance 2\", \"seedance v2\", \"seedance pro\", \"bytedance video\",...",
-      "githubUrl": "https://github.com/agentspace-so/runcomfy-skills/tree/main/seedance-v2",
+      "url": "https://www.skills.sh/doany-ai/skills/runcomfy-cli",
+      "description": "Run any model on RunComfy from the command line. The `runcomfy` CLI is one binary, one auth, hundreds of model endpoints — image generation, image edit, video generation, image-to-video, lip-sync, face swap, video edit, inpainting, outpainting, extend, ControlNet, relight, upscale, LoRA training and more. Submit a request, poll for status, download the output. This skill teaches the agent how to install, authenticate, discover model schemas, invoke models, stream / poll / no-wait, script in JSON output mode, and...",
+      "githubUrl": "https://github.com/doany-ai/skills",
       "topics": [],
-      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/seedance-v2 --skill seedance-v2"
+      "installCommand": "npx skills add https://github.com/doany-ai/skills --skill runcomfy-cli"
     },
     {
-      "rank": 159,
+      "rank": 156,
       "source": "doany-ai/skills",
       "skillId": "relight",
       "name": "relight",
-      "installs": 197644,
+      "installs": 198116,
       "weeklyInstalls": [
         0,
         0,
@@ -3693,34 +3628,80 @@
       "installCommand": "npx skills add https://github.com/doany-ai/skills --skill relight"
     },
     {
-      "rank": 160,
+      "rank": 157,
       "source": "doany-ai/skills",
-      "skillId": "nano-banana-edit",
-      "name": "nano-banana-edit",
-      "installs": 197633,
+      "skillId": "seedance-v2",
+      "name": "seedance-v2",
+      "installs": 198115,
       "weeklyInstalls": [
         0,
         0,
         0,
-        33912,
-        37637,
-        37189,
-        25063,
-        35212
+        34170,
+        37307,
+        37117,
+        24802,
+        35585
       ],
       "isOfficial": false,
-      "url": "https://www.skills.sh/doany-ai/skills/nano-banana-edit",
-      "description": "Edit images with Google Nano Banana 2 (image-to-image edit endpoint) on RunComfy. Documents Nano Banana Edit's strengths (preserve subject identity, swap background, localize edits with spatial language, multi-image batch edits up to 20 inputs), the schema, and when to route to GPT Image 2 edit / Flux Kontext / Nano Banana 2 t2i instead. Calls `runcomfy run google/nano-banana-2/edit` through the local RunComfy CLI. Triggers on \"nano banana edit\", \"edit with nano banana\", \"image edit nano banana\", or any explicit...",
-      "githubUrl": "https://github.com/agentspace-so/runcomfy-skills/tree/main/nano-banana-edit",
+      "url": "https://www.skills.sh/doany-ai/skills/seedance-v2",
+      "description": "Generate cinematic short-form video with ByteDance Seedance 2.0 Pro on RunComfy. Documents Seedance 2.0 Pro's strengths (multi-modal references — up to 9 images, 3 videos, 3 audio — synchronized in-pass audio with natural lip-sync, cinematic motion refinement), the 4–15s duration schema, and when to route to HappyHorse 1.0 / Wan 2.7 / Kling instead. Calls `runcomfy run bytedance/seedance-v2/pro` through the local RunComfy CLI. Triggers on \"seedance\", \"seedance 2\", \"seedance v2\", \"seedance pro\", \"bytedance video\",...",
+      "githubUrl": "https://github.com/agentspace-so/runcomfy-skills/tree/main/seedance-v2",
       "topics": [],
-      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/nano-banana-edit --skill nano-banana-edit"
+      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/seedance-v2 --skill seedance-v2"
     },
     {
-      "rank": 161,
+      "rank": 158,
+      "source": "doany-ai/skills",
+      "skillId": "nano-banana-2",
+      "name": "nano-banana-2",
+      "installs": 198109,
+      "weeklyInstalls": [
+        0,
+        0,
+        0,
+        34142,
+        37293,
+        37290,
+        24958,
+        35441
+      ],
+      "isOfficial": false,
+      "url": "https://www.skills.sh/doany-ai/skills/nano-banana-2",
+      "description": "Generate images with Google Nano Banana 2 (Gemini-family flash-tier text-to-image) on RunComfy — bundled with the model's documented prompting patterns so the skill gets sharper output than naive prompting against the same model. Documents Nano Banana 2's strengths (rapid iteration, in-image typography rendering, predictable framing, optional web-grounded context), the resolution-tier pricing, the safety-tolerance dial, and when to route to Nano Banana Pro / GPT Image 2 / Flux 2 / Seedream instead. Calls...",
+      "githubUrl": "https://github.com/agentspace-so/runcomfy-skills/tree/main/nano-banana-2",
+      "topics": [],
+      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/nano-banana-2 --skill nano-banana-2"
+    },
+    {
+      "rank": 159,
+      "source": "doany-ai/skills",
+      "skillId": "gpt-image-2",
+      "name": "gpt-image-2",
+      "installs": 198096,
+      "weeklyInstalls": [
+        0,
+        0,
+        0,
+        33888,
+        37441,
+        37243,
+        24872,
+        35479
+      ],
+      "isOfficial": false,
+      "url": "https://www.skills.sh/doany-ai/skills/gpt-image-2",
+      "description": "Generate and edit images with OpenAI GPT Image 2 (ChatGPT Images 2.0) on RunComfy. Documents GPT Image 2's strengths (embedded text, logos, multilingual typography, instruction precision), its 3 fixed sizes, edit-with-preservation language, and when to route to a sibling (Flux 2 / Nano Banana Pro / Seedream) instead. Calls `runcomfy run openai/gpt-image-2/text-to-image` or `/edit` through the local RunComfy CLI. Triggers on \"gpt image 2\", \"gpt-image-2\", \"ChatGPT Images 2\", \"image 2\", or any explicit ask to...",
+      "githubUrl": "https://github.com/agentspace-so/runcomfy-skills/tree/main/gpt-image-2",
+      "topics": [],
+      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/gpt-image-2 --skill gpt-image-2"
+    },
+    {
+      "rank": 160,
       "source": "runcomfy-com/skills",
       "skillId": "ai-avatar-video",
       "name": "ai-avatar-video",
-      "installs": 197620,
+      "installs": 198087,
       "weeklyInstalls": [
         0,
         0,
@@ -3739,57 +3720,34 @@
       "installCommand": "npx skills add https://github.com/runcomfy-com/skills --skill ai-avatar-video"
     },
     {
+      "rank": 161,
+      "source": "doany-ai/skills",
+      "skillId": "nano-banana-edit",
+      "name": "nano-banana-edit",
+      "installs": 198083,
+      "weeklyInstalls": [
+        0,
+        0,
+        0,
+        33912,
+        37637,
+        37189,
+        25063,
+        35212
+      ],
+      "isOfficial": false,
+      "url": "https://www.skills.sh/doany-ai/skills/nano-banana-edit",
+      "description": "Edit images with Google Nano Banana 2 (image-to-image edit endpoint) on RunComfy. Documents Nano Banana Edit's strengths (preserve subject identity, swap background, localize edits with spatial language, multi-image batch edits up to 20 inputs), the schema, and when to route to GPT Image 2 edit / Flux Kontext / Nano Banana 2 t2i instead. Calls `runcomfy run google/nano-banana-2/edit` through the local RunComfy CLI. Triggers on \"nano banana edit\", \"edit with nano banana\", \"image edit nano banana\", or any explicit...",
+      "githubUrl": "https://github.com/agentspace-so/runcomfy-skills/tree/main/nano-banana-edit",
+      "topics": [],
+      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/nano-banana-edit --skill nano-banana-edit"
+    },
+    {
       "rank": 162,
-      "source": "runcomfy-com/skills",
-      "skillId": "image-to-video",
-      "name": "image-to-video",
-      "installs": 197612,
-      "weeklyInstalls": [
-        0,
-        0,
-        0,
-        34087,
-        37532,
-        37404,
-        24832,
-        35318
-      ],
-      "isOfficial": false,
-      "url": "https://www.skills.sh/runcomfy-com/skills/image-to-video",
-      "description": "Animate any still image on RunComfy — this skill is a smart router that matches the user's intent to the right i2v model in the RunComfy catalog. Picks HappyHorse 1.0 I2V (Arena #1, native audio, identity preservation) for general animations, Wan 2.7 with `audio_url` for custom-voiceover lip-sync, or Seedance 2.0 Pro for multi-modal animation from image + reference video + reference audio. Bundles each model's documented prompting patterns so the caller gets sharper output without burning iterations on the wrong...",
-      "githubUrl": "https://github.com/agentspace-so/runcomfy-skills/tree/main/image-to-video",
-      "topics": [],
-      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/image-to-video --skill image-to-video"
-    },
-    {
-      "rank": 163,
-      "source": "runcomfy-com/skills",
-      "skillId": "ai-video-generation",
-      "name": "ai-video-generation",
-      "installs": 197606,
-      "weeklyInstalls": [
-        0,
-        0,
-        0,
-        33948,
-        37413,
-        37232,
-        25017,
-        35412
-      ],
-      "isOfficial": false,
-      "url": "https://www.skills.sh/runcomfy-com/skills/ai-video-generation",
-      "description": "Generate AI videos on RunComfy via the `runcomfy` CLI — a smart router across the full video-model catalog: HappyHorse 1.0 (Arena #1, native in-pass audio), Wan-AI Wan 2-7 (open weights, audio-driven lip-sync), ByteDance Seedance v2 / 1-5 / 1-0 (multi-modal cinematic), Kling 3.0 / 2-6, Google Veo 3-1, MiniMax Hailuo 2-3, ByteDance Dreamina 3-0. Covers text-to-video (t2v), image-to-video (i2v), and Veo's video-extend endpoint. The skill picks the right model for the user's intent (Arena-#1 quality, multi-shot...",
-      "githubUrl": "https://github.com/runcomfy-com/skills",
-      "topics": [],
-      "installCommand": "npx skills add https://github.com/runcomfy-com/skills --skill ai-video-generation"
-    },
-    {
-      "rank": 164,
       "source": "doany-ai/skills",
       "skillId": "face-swap",
       "name": "face-swap",
-      "installs": 197587,
+      "installs": 198076,
       "weeklyInstalls": [
         0,
         0,
@@ -3808,11 +3766,57 @@
       "installCommand": "npx skills add https://github.com/doany-ai/skills --skill face-swap"
     },
     {
+      "rank": 163,
+      "source": "runcomfy-com/skills",
+      "skillId": "image-to-video",
+      "name": "image-to-video",
+      "installs": 198057,
+      "weeklyInstalls": [
+        0,
+        0,
+        0,
+        34087,
+        37532,
+        37404,
+        24832,
+        35318
+      ],
+      "isOfficial": false,
+      "url": "https://www.skills.sh/runcomfy-com/skills/image-to-video",
+      "description": "Animate any still image on RunComfy — this skill is a smart router that matches the user's intent to the right i2v model in the RunComfy catalog. Picks HappyHorse 1.0 I2V (Arena #1, native audio, identity preservation) for general animations, Wan 2.7 with `audio_url` for custom-voiceover lip-sync, or Seedance 2.0 Pro for multi-modal animation from image + reference video + reference audio. Bundles each model's documented prompting patterns so the caller gets sharper output without burning iterations on the wrong...",
+      "githubUrl": "https://github.com/agentspace-so/runcomfy-skills/tree/main/image-to-video",
+      "topics": [],
+      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/image-to-video --skill image-to-video"
+    },
+    {
+      "rank": 164,
+      "source": "runcomfy-com/skills",
+      "skillId": "ai-video-generation",
+      "name": "ai-video-generation",
+      "installs": 198054,
+      "weeklyInstalls": [
+        0,
+        0,
+        0,
+        33948,
+        37413,
+        37232,
+        25017,
+        35412
+      ],
+      "isOfficial": false,
+      "url": "https://www.skills.sh/runcomfy-com/skills/ai-video-generation",
+      "description": "Generate AI videos on RunComfy via the `runcomfy` CLI — a smart router across the full video-model catalog: HappyHorse 1.0 (Arena #1, native in-pass audio), Wan-AI Wan 2-7 (open weights, audio-driven lip-sync), ByteDance Seedance v2 / 1-5 / 1-0 (multi-modal cinematic), Kling 3.0 / 2-6, Google Veo 3-1, MiniMax Hailuo 2-3, ByteDance Dreamina 3-0. Covers text-to-video (t2v), image-to-video (i2v), and Veo's video-extend endpoint. The skill picks the right model for the user's intent (Arena-#1 quality, multi-shot...",
+      "githubUrl": "https://github.com/runcomfy-com/skills",
+      "topics": [],
+      "installCommand": "npx skills add https://github.com/runcomfy-com/skills --skill ai-video-generation"
+    },
+    {
       "rank": 165,
       "source": "runcomfy-com/skills",
       "skillId": "video-edit",
       "name": "video-edit",
-      "installs": 197573,
+      "installs": 198053,
       "weeklyInstalls": [
         0,
         0,
@@ -3835,7 +3839,7 @@
       "source": "runcomfy-com/skills",
       "skillId": "image-inpainting",
       "name": "image-inpainting",
-      "installs": 197568,
+      "installs": 198049,
       "weeklyInstalls": [
         0,
         0,
@@ -3858,7 +3862,7 @@
       "source": "doany-ai/skills",
       "skillId": "flux-2-klein",
       "name": "flux-2-klein",
-      "installs": 197534,
+      "installs": 198000,
       "weeklyInstalls": [
         0,
         0,
@@ -3881,7 +3885,7 @@
       "source": "doany-ai/skills",
       "skillId": "video-extend",
       "name": "video-extend",
-      "installs": 197480,
+      "installs": 197973,
       "weeklyInstalls": [
         0,
         0,
@@ -3904,7 +3908,7 @@
       "source": "runcomfy-com/skills",
       "skillId": "ai-music",
       "name": "ai-music",
-      "installs": 197468,
+      "installs": 197957,
       "weeklyInstalls": [
         0,
         0,
@@ -3925,55 +3929,9 @@
     {
       "rank": 170,
       "source": "doany-ai/skills",
-      "skillId": "image-inpainting",
-      "name": "image-inpainting",
-      "installs": 197462,
-      "weeklyInstalls": [
-        0,
-        0,
-        0,
-        33835,
-        37574,
-        37239,
-        25049,
-        35210
-      ],
-      "isOfficial": false,
-      "url": "https://www.skills.sh/doany-ai/skills/image-inpainting",
-      "description": "Mask-driven image inpainting on RunComfy via the `runcomfy` CLI. Routes to Tongyi MAI Z-Image Turbo Inpainting (the dedicated inpainting endpoint with mask, strength, and control-scale) and to identity-preserving edit models (Nano Banana 2 Edit, GPT Image 2 Edit, FLUX Kontext Pro) when a mask isn't available and the region must be described instead. Use for object removal, watermark removal, region replacement, blemish cleanup, and any controlled local edit where a binary mask defines the target area. Triggers on...",
-      "githubUrl": "https://github.com/doany-ai/skills",
-      "topics": [],
-      "installCommand": "npx skills add https://github.com/doany-ai/skills --skill image-inpainting"
-    },
-    {
-      "rank": 171,
-      "source": "doany-ai/skills",
-      "skillId": "gpt-image-edit",
-      "name": "gpt-image-edit",
-      "installs": 197454,
-      "weeklyInstalls": [
-        0,
-        0,
-        0,
-        34174,
-        37269,
-        37104,
-        24701,
-        35606
-      ],
-      "isOfficial": false,
-      "url": "https://www.skills.sh/doany-ai/skills/gpt-image-edit",
-      "description": "Edit images with OpenAI GPT Image 2 (the `/edit` endpoint of ChatGPT Images 2.0) on RunComfy — bundled with the model's documented prompting patterns so the skill gets sharper output than naive prompting against the same model. Documents GPT Image Edit's strengths (preservation language, multilingual in-image text editing, multi-reference up to 10 images, layout / typography precision), the schema, and when to route to Nano Banana Edit / Flux Kontext / GPT Image 2 t2i instead. Calls `runcomfy run...",
-      "githubUrl": "https://github.com/agentspace-so/runcomfy-skills/tree/main/gpt-image-edit",
-      "topics": [],
-      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/gpt-image-edit --skill gpt-image-edit"
-    },
-    {
-      "rank": 172,
-      "source": "doany-ai/skills",
       "skillId": "image-edit",
       "name": "image-edit",
-      "installs": 197452,
+      "installs": 197953,
       "weeklyInstalls": [
         0,
         0,
@@ -3992,34 +3950,57 @@
       "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/image-edit --skill image-edit"
     },
     {
-      "rank": 173,
-      "source": "runcomfy-com/skills",
-      "skillId": "video-inpainting",
-      "name": "video-inpainting",
-      "installs": 197411,
+      "rank": 171,
+      "source": "doany-ai/skills",
+      "skillId": "image-inpainting",
+      "name": "image-inpainting",
+      "installs": 197929,
       "weeklyInstalls": [
         0,
         0,
         0,
-        33994,
-        37318,
-        37436,
-        24823,
-        35399
+        33835,
+        37574,
+        37239,
+        25049,
+        35210
       ],
       "isOfficial": false,
-      "url": "https://www.skills.sh/runcomfy-com/skills/video-inpainting",
-      "description": "Region edits across video frames on RunComfy via the `runcomfy` CLI — remove an object that appears across many frames, clean up wires or watermarks, replace a region with matching motion. Routes across Wan 2-7 edit-video (default, prompt-driven region edits with spatial language), Lucy Edit Restyle (identity-stable region-aware restyle), and Seedream 4-0 edit-sequential (when treating the clip as a frame stack). Picks the right route based on whether the change is prose-driven, identity-locked, or needs...",
-      "githubUrl": "https://github.com/runcomfy-com/skills",
+      "url": "https://www.skills.sh/doany-ai/skills/image-inpainting",
+      "description": "Mask-driven image inpainting on RunComfy via the `runcomfy` CLI. Routes to Tongyi MAI Z-Image Turbo Inpainting (the dedicated inpainting endpoint with mask, strength, and control-scale) and to identity-preserving edit models (Nano Banana 2 Edit, GPT Image 2 Edit, FLUX Kontext Pro) when a mask isn't available and the region must be described instead. Use for object removal, watermark removal, region replacement, blemish cleanup, and any controlled local edit where a binary mask defines the target area. Triggers on...",
+      "githubUrl": "https://github.com/doany-ai/skills",
       "topics": [],
-      "installCommand": "npx skills add https://github.com/runcomfy-com/skills --skill video-inpainting"
+      "installCommand": "npx skills add https://github.com/doany-ai/skills --skill image-inpainting"
     },
     {
-      "rank": 174,
+      "rank": 172,
+      "source": "doany-ai/skills",
+      "skillId": "gpt-image-edit",
+      "name": "gpt-image-edit",
+      "installs": 197922,
+      "weeklyInstalls": [
+        0,
+        0,
+        0,
+        34174,
+        37269,
+        37104,
+        24701,
+        35606
+      ],
+      "isOfficial": false,
+      "url": "https://www.skills.sh/doany-ai/skills/gpt-image-edit",
+      "description": "Edit images with OpenAI GPT Image 2 (the `/edit` endpoint of ChatGPT Images 2.0) on RunComfy — bundled with the model's documented prompting patterns so the skill gets sharper output than naive prompting against the same model. Documents GPT Image Edit's strengths (preservation language, multilingual in-image text editing, multi-reference up to 10 images, layout / typography precision), the schema, and when to route to Nano Banana Edit / Flux Kontext / GPT Image 2 t2i instead. Calls `runcomfy run...",
+      "githubUrl": "https://github.com/agentspace-so/runcomfy-skills/tree/main/gpt-image-edit",
+      "topics": [],
+      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-skills/tree/main/gpt-image-edit --skill gpt-image-edit"
+    },
+    {
+      "rank": 173,
       "source": "doany-ai/skills",
       "skillId": "video-outpainting",
       "name": "video-outpainting",
-      "installs": 197409,
+      "installs": 197891,
       "weeklyInstalls": [
         0,
         0,
@@ -4038,11 +4019,34 @@
       "installCommand": "npx skills add https://github.com/doany-ai/skills --skill video-outpainting"
     },
     {
+      "rank": 174,
+      "source": "runcomfy-com/skills",
+      "skillId": "video-inpainting",
+      "name": "video-inpainting",
+      "installs": 197880,
+      "weeklyInstalls": [
+        0,
+        0,
+        0,
+        33994,
+        37318,
+        37436,
+        24823,
+        35399
+      ],
+      "isOfficial": false,
+      "url": "https://www.skills.sh/runcomfy-com/skills/video-inpainting",
+      "description": "Region edits across video frames on RunComfy via the `runcomfy` CLI — remove an object that appears across many frames, clean up wires or watermarks, replace a region with matching motion. Routes across Wan 2-7 edit-video (default, prompt-driven region edits with spatial language), Lucy Edit Restyle (identity-stable region-aware restyle), and Seedream 4-0 edit-sequential (when treating the clip as a frame stack). Picks the right route based on whether the change is prose-driven, identity-locked, or needs...",
+      "githubUrl": "https://github.com/runcomfy-com/skills",
+      "topics": [],
+      "installCommand": "npx skills add https://github.com/runcomfy-com/skills --skill video-inpainting"
+    },
+    {
       "rank": 175,
       "source": "runcomfy-com/skills",
       "skillId": "controlnet-pose",
       "name": "controlnet-pose",
-      "installs": 197399,
+      "installs": 197865,
       "weeklyInstalls": [
         0,
         0,
@@ -4065,7 +4069,7 @@
       "source": "doany-ai/skills",
       "skillId": "happyhorse-1-0",
       "name": "happyhorse-1-0",
-      "installs": 197380,
+      "installs": 197847,
       "weeklyInstalls": [
         0,
         0,
@@ -4088,7 +4092,7 @@
       "source": "doany-ai/skills",
       "skillId": "ai-avatar-video",
       "name": "ai-avatar-video",
-      "installs": 197377,
+      "installs": 197846,
       "weeklyInstalls": [
         0,
         0,
@@ -4111,7 +4115,7 @@
       "source": "runcomfy-com/skills",
       "skillId": "lipsync",
       "name": "lipsync",
-      "installs": 197347,
+      "installs": 197818,
       "weeklyInstalls": [
         0,
         0,
@@ -4134,7 +4138,7 @@
       "source": "runcomfy-com/skills",
       "skillId": "gpt-image-edit",
       "name": "gpt-image-edit",
-      "installs": 197337,
+      "installs": 197808,
       "weeklyInstalls": [
         0,
         0,
@@ -4157,7 +4161,7 @@
       "source": "runcomfy-com/skills",
       "skillId": "runcomfy-cli",
       "name": "runcomfy-cli",
-      "installs": 197314,
+      "installs": 197799,
       "weeklyInstalls": [
         0,
         0,
@@ -4180,7 +4184,7 @@
       "source": "doany-ai/skills",
       "skillId": "ai-image-generation",
       "name": "ai-image-generation",
-      "installs": 197310,
+      "installs": 197786,
       "weeklyInstalls": [
         0,
         0,
@@ -4203,7 +4207,7 @@
       "source": "runcomfy-com/skills",
       "skillId": "happyhorse-1-0",
       "name": "happyhorse-1-0",
-      "installs": 197280,
+      "installs": 197752,
       "weeklyInstalls": [
         0,
         0,
@@ -4226,7 +4230,7 @@
       "source": "doany-ai/skills",
       "skillId": "ace-step",
       "name": "ace-step",
-      "installs": 197257,
+      "installs": 197732,
       "weeklyInstalls": [
         0,
         0,
@@ -4249,7 +4253,7 @@
       "source": "doany-ai/skills",
       "skillId": "lipsync",
       "name": "lipsync",
-      "installs": 197220,
+      "installs": 197688,
       "weeklyInstalls": [
         0,
         0,
@@ -4272,7 +4276,7 @@
       "source": "doany-ai/skills",
       "skillId": "image-to-video",
       "name": "image-to-video",
-      "installs": 197209,
+      "installs": 197648,
       "weeklyInstalls": [
         0,
         0,
@@ -4295,7 +4299,7 @@
       "source": "runcomfy-com/skills",
       "skillId": "image-outpainting",
       "name": "image-outpainting",
-      "installs": 197157,
+      "installs": 197625,
       "weeklyInstalls": [
         0,
         0,
@@ -4318,7 +4322,7 @@
       "source": "runcomfy-com/skills",
       "skillId": "wan-2-7",
       "name": "wan-2-7",
-      "installs": 197157,
+      "installs": 197625,
       "weeklyInstalls": [
         0,
         0,
@@ -4341,7 +4345,7 @@
       "source": "runcomfy-com/skills",
       "skillId": "image-edit",
       "name": "image-edit",
-      "installs": 197141,
+      "installs": 197597,
       "weeklyInstalls": [
         0,
         0,
@@ -4364,7 +4368,7 @@
       "source": "doany-ai/skills",
       "skillId": "flux-kontext",
       "name": "flux-kontext",
-      "installs": 197127,
+      "installs": 197582,
       "weeklyInstalls": [
         0,
         0,
@@ -4385,32 +4389,32 @@
     {
       "rank": 190,
       "source": "runcomfy-com/skills",
-      "skillId": "kling-3-0",
-      "name": "kling-3-0",
-      "installs": 197103,
+      "skillId": "video-outpainting",
+      "name": "video-outpainting",
+      "installs": 197572,
       "weeklyInstalls": [
         0,
         0,
         0,
-        33945,
-        37278,
-        37154,
-        25164,
-        35095
+        33874,
+        37359,
+        37028,
+        24968,
+        35401
       ],
       "isOfficial": false,
-      "url": "https://www.skills.sh/runcomfy-com/skills/kling-3-0",
-      "description": "Kling 3.0 video generation on RunComfy. Kling 3.0 (also called Kling V3.0) is Kuaishou Technology's third-generation multi-shot video model with native synchronized audio and consistent character identity across shots. This skill covers all six Kling 3.0 endpoints, spanning three rendering tiers (Standard, Pro, 4K) and two modes (text-to-video, image-to-video). Calls runcomfy run kling/kling-3.0/ / through the local RunComfy CLI. Triggers on \"kling\", \"kling 3.0\", \"kling v3\", \"kling pro\", \"kling 4k\", \"kling text...",
-      "githubUrl": "https://github.com/agentspace-so/runcomfy-agent-skills/tree/main/kling-3-0",
+      "url": "https://www.skills.sh/runcomfy-com/skills/video-outpainting",
+      "description": "Video outpainting on RunComfy via the `runcomfy` CLI — extend the spatial canvas of a video, change aspect ratio (9:16 vertical to 16:9 horizontal or vice versa), add environment beyond the original frame while preserving the central action. Routes prompt-shaped spatial extension through Wan 2-7 edit-video and points the agent at dedicated ComfyUI outpaint workflows when seam quality matters for hero delivery. Triggers on \"video outpaint\", \"video outpainting\", \"extend video canvas\", \"expand video frame\", \"uncrop...",
+      "githubUrl": "https://github.com/runcomfy-com/skills",
       "topics": [],
-      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-agent-skills/tree/main/kling-3-0 --skill kling-3-0"
+      "installCommand": "npx skills add https://github.com/runcomfy-com/skills --skill video-outpainting"
     },
     {
       "rank": 191,
       "source": "runcomfy-com/skills",
       "skillId": "relight",
       "name": "relight",
-      "installs": 197100,
+      "installs": 197566,
       "weeklyInstalls": [
         0,
         0,
@@ -4431,48 +4435,48 @@
     {
       "rank": 192,
       "source": "runcomfy-com/skills",
-      "skillId": "video-outpainting",
-      "name": "video-outpainting",
-      "installs": 197083,
+      "skillId": "kling-3-0",
+      "name": "kling-3-0",
+      "installs": 197544,
       "weeklyInstalls": [
         0,
         0,
         0,
-        33874,
-        37359,
-        37028,
-        24968,
-        35401
+        33945,
+        37278,
+        37154,
+        25164,
+        35095
       ],
       "isOfficial": false,
-      "url": "https://www.skills.sh/runcomfy-com/skills/video-outpainting",
-      "description": "Video outpainting on RunComfy via the `runcomfy` CLI — extend the spatial canvas of a video, change aspect ratio (9:16 vertical to 16:9 horizontal or vice versa), add environment beyond the original frame while preserving the central action. Routes prompt-shaped spatial extension through Wan 2-7 edit-video and points the agent at dedicated ComfyUI outpaint workflows when seam quality matters for hero delivery. Triggers on \"video outpaint\", \"video outpainting\", \"extend video canvas\", \"expand video frame\", \"uncrop...",
-      "githubUrl": "https://github.com/runcomfy-com/skills",
+      "url": "https://www.skills.sh/runcomfy-com/skills/kling-3-0",
+      "description": "Kling 3.0 video generation on RunComfy. Kling 3.0 (also called Kling V3.0) is Kuaishou Technology's third-generation multi-shot video model with native synchronized audio and consistent character identity across shots. This skill covers all six Kling 3.0 endpoints, spanning three rendering tiers (Standard, Pro, 4K) and two modes (text-to-video, image-to-video). Calls runcomfy run kling/kling-3.0/ / through the local RunComfy CLI. Triggers on \"kling\", \"kling 3.0\", \"kling v3\", \"kling pro\", \"kling 4k\", \"kling text...",
+      "githubUrl": "https://github.com/agentspace-so/runcomfy-agent-skills/tree/main/kling-3-0",
       "topics": [],
-      "installCommand": "npx skills add https://github.com/runcomfy-com/skills --skill video-outpainting"
+      "installCommand": "npx skills add https://github.com/agentspace-so/runcomfy-agent-skills/tree/main/kling-3-0 --skill kling-3-0"
     },
     {
       "rank": 193,
-      "source": "runcomfy-com/skills",
-      "skillId": "video-extend",
-      "name": "video-extend",
-      "installs": 197036,
+      "source": "doany-ai/skills",
+      "skillId": "elevenlabs-music-generation",
+      "name": "elevenlabs-music-generation",
+      "installs": 197493,
       "weeklyInstalls": [
         0,
         0,
         0,
-        33656,
-        37655,
-        37188,
-        24998,
-        35105
+        34113,
+        37374,
+        37078,
+        24944,
+        35237
       ],
       "isOfficial": false,
-      "url": "https://www.skills.sh/runcomfy-com/skills/video-extend",
-      "description": "Extend or continue an existing video clip on RunComfy via the `runcomfy` CLI. Routes to Google Veo 3-1's `extend-video` and `fast/extend-video` endpoints — pick the source video plus a prompt describing what should happen next, and the model produces a clip that continues the original with consistent motion, lighting, and subject identity. Use when the user has a short Veo clip and wants it longer, or wants a chained narrative built shot-by-shot from a single seed clip. Triggers on \"extend video\", \"continue...",
-      "githubUrl": "https://github.com/runcomfy-com/skills",
+      "url": "https://www.skills.sh/doany-ai/skills/elevenlabs-music-generation",
+      "description": "Generate full songs and instrumental tracks with ElevenLabs Music on RunComfy via the `runcomfy` CLI. ElevenLabs Music turns a style description plus structured lyrics into studio-quality 44.1 kHz stereo audio — 5 seconds to 5 minutes — with section-level control (Intro / Verse / Chorus / Bridge), multilingual vocals, and commercial-friendly output. Generate a backing track, a full vocal song, a jingle, a podcast intro, a game loop, or an instrumental bed. Calls `runcomfy run...",
+      "githubUrl": "https://github.com/doany-ai/skills",
       "topics": [],
-      "installCommand": "npx skills add https://github.com/runcomfy-com/skills --skill video-extend"
+      "installCommand": "npx skills add https://github.com/doany-ai/skills --skill elevenlabs-music-generation"
     }
   ]
 }

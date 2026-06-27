@@ -4,10 +4,22 @@ import path from "node:path";
 const root = process.cwd();
 const sourcesDir = path.join(root, "sources");
 const homePath = path.join(sourcesDir, "skills-sh-home.html");
-const outputPath = path.join(sourcesDir, "skills-sh-top.json");
 const sourceUrl = "https://www.skills.sh/";
-const topPercent = 2;
+const apiBaseUrl = "https://www.skills.sh/api/skills";
+const pageSize = 200;
 const detailConcurrency = 8;
+const datasets = [
+  {
+    outputPath: path.join(sourcesDir, "skills-sh-top.json"),
+    topPercent: 2,
+    excludedTopPercent: 0,
+  },
+  {
+    outputPath: path.join(sourcesDir, "skills-sh-top10-remainder.json"),
+    topPercent: 10,
+    excludedTopPercent: 2,
+  },
+];
 
 fs.mkdirSync(sourcesDir, { recursive: true });
 
@@ -112,7 +124,7 @@ function parseMetaDescription(html) {
 
 function fallbackDescription(skill) {
   const installCount = new Intl.NumberFormat("en-US").format(skill.installs || 0);
-  return `Top ${topPercent}% skills.sh all-time leaderboard skill with ${installCount} installs. Source ${skill.source}; skill id ${skill.skillId}.`;
+  return `skills.sh all-time leaderboard rank #${skill.rank || "unknown"} with ${installCount} installs. Source ${skill.source}; skill id ${skill.skillId}.`;
 }
 
 function parseDetail(html, skill) {
@@ -146,20 +158,78 @@ async function mapLimit(items, limit, mapper) {
   return results;
 }
 
-async function main() {
-  const homepage = await fetchText(sourceUrl);
-  fs.writeFileSync(homePath, homepage, "utf8");
+function skillKey(skill) {
+  return `${skill.source || ""}::${skill.skillId || ""}`.toLowerCase();
+}
 
-  const leaderboard = extractLeaderboard(homepage);
-  const topCount = Math.ceil(leaderboard.totalSkills * (topPercent / 100));
-  const selected = leaderboard.skills.slice(0, topCount);
+function loadDetailCache() {
+  const cache = new Map();
+  for (const { outputPath } of datasets) {
+    if (!fs.existsSync(outputPath)) continue;
+    try {
+      const data = JSON.parse(fs.readFileSync(outputPath, "utf8"));
+      for (const skill of data.skills || []) {
+        cache.set(skillKey(skill), {
+          description: skill.description || "",
+          githubUrl: skill.githubUrl || "",
+          topics: Array.isArray(skill.topics) ? skill.topics : [],
+          installCommand: skill.installCommand || "",
+        });
+      }
+    } catch (error) {
+      console.warn(`Could not read existing detail cache from ${outputPath}: ${error.message}`);
+    }
+  }
+  return cache;
+}
 
-  const skills = await mapLimit(selected, detailConcurrency, async (item, index) => {
+async function fetchLeaderboardPages(view, targetCount) {
+  const pageCount = Math.ceil(targetCount / pageSize);
+  const pages = await mapLimit(Array.from({ length: pageCount }, (_, page) => page), 4, async (page) => {
+    const response = await fetch(`${apiBaseUrl}/${view}/${page}`, {
+      headers: {
+        "user-agent": "Skill Atlas data refresh (https://github.com/tbuhl/AI_skill_overview)",
+      },
+    });
+    if (!response.ok) throw new Error(`skills.sh API page ${page} returned ${response.status}`);
+    return response.json();
+  });
+
+  const seen = new Set();
+  const skills = [];
+  for (const page of pages) {
+    for (const skill of page.skills || []) {
+      const key = skillKey(skill);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      skills.push(skill);
+    }
+  }
+  return skills;
+}
+
+async function enrichSkills(selected, detailCache) {
+  return mapLimit(selected, detailConcurrency, async ({ item, rank }) => {
     const url = `https://www.skills.sh/${item.source}/${item.skillId}`;
+    const cached = detailCache.get(skillKey(item));
+    if (cached?.description) {
+      return {
+        rank,
+        source: item.source,
+        skillId: item.skillId,
+        name: item.name,
+        installs: item.installs,
+        weeklyInstalls: item.weeklyInstalls || [],
+        isOfficial: Boolean(item.isOfficial),
+        url,
+        ...cached,
+      };
+    }
+
     try {
       const detailHtml = await fetchText(url);
       return {
-        rank: index + 1,
+        rank,
         source: item.source,
         skillId: item.skillId,
         name: item.name,
@@ -173,7 +243,7 @@ async function main() {
       console.warn(`Detail fetch failed for ${url}: ${error.message}`);
       const githubUrl = item.source.includes("/") ? `https://github.com/${item.source}` : "";
       return {
-        rank: index + 1,
+        rank,
         source: item.source,
         skillId: item.skillId,
         name: item.name,
@@ -181,27 +251,52 @@ async function main() {
         weeklyInstalls: item.weeklyInstalls || [],
         isOfficial: Boolean(item.isOfficial),
         url,
-        description: fallbackDescription(item),
+        description: fallbackDescription({ ...item, rank }),
         githubUrl,
         topics: [],
         installCommand: installCommandFor(item.source, item.skillId, githubUrl),
       };
     }
   });
+}
 
-  const payload = {
-    generatedAt: new Date().toISOString(),
-    sourceUrl,
-    view: leaderboard.view,
-    totalSkills: leaderboard.totalSkills,
-    allTimeTotal: leaderboard.allTimeTotal,
-    topPercent,
-    topCount,
-    skills,
-  };
+async function main() {
+  const homepage = await fetchText(sourceUrl);
+  fs.writeFileSync(homePath, homepage, "utf8");
 
-  fs.writeFileSync(outputPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
-  console.log(`Wrote ${path.relative(root, outputPath)} with top ${topCount} of ${leaderboard.totalSkills} skills.`);
+  const leaderboard = extractLeaderboard(homepage);
+  const maxTopPercent = Math.max(...datasets.map((dataset) => dataset.topPercent));
+  const maxTopCount = Math.ceil(leaderboard.totalSkills * (maxTopPercent / 100));
+  const allRanked = await fetchLeaderboardPages(leaderboard.view, maxTopCount);
+  const detailCache = loadDetailCache();
+
+  for (const dataset of datasets) {
+    const topCount = Math.ceil(leaderboard.totalSkills * (dataset.topPercent / 100));
+    const excludedCount = Math.ceil(leaderboard.totalSkills * ((dataset.excludedTopPercent || 0) / 100));
+    const selected = allRanked
+      .slice(excludedCount, topCount)
+      .map((item, index) => ({ item, rank: excludedCount + index + 1 }));
+    const skills = await enrichSkills(selected, detailCache);
+    const payload = {
+      generatedAt: new Date().toISOString(),
+      sourceUrl,
+      view: leaderboard.view,
+      totalSkills: leaderboard.totalSkills,
+      allTimeTotal: leaderboard.allTimeTotal,
+      topPercent: dataset.topPercent,
+      excludedTopPercent: dataset.excludedTopPercent || 0,
+      excludedCount,
+      topCount,
+      startRank: excludedCount + 1,
+      endRank: excludedCount + skills.length,
+      skills,
+    };
+
+    fs.writeFileSync(dataset.outputPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+    console.log(
+      `Wrote ${path.relative(root, dataset.outputPath)} with ranks ${payload.startRank}-${payload.endRank} of ${leaderboard.totalSkills} skills.`,
+    );
+  }
 }
 
 main().catch((error) => {

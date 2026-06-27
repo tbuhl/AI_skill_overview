@@ -1,6 +1,7 @@
 __pycache__/
 node_modules/
 test-results/
+.tmp-skills-sh/
 *.pid
 *.png
 sources/skills-sh-*.html

@@ -3,3 +3,4 @@ node_modules/
 test-results/
 *.pid
 *.png
+sources/skills-sh-*.html

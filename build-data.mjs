@@ -5,6 +5,7 @@ const root = process.cwd();
 const sourcePath = fs.existsSync(path.join(root, "awesome-agent-skills.md"))
   ? path.join(root, "awesome-agent-skills.md")
   : path.join(root, "sources", "awesome-agent-skills.md");
+const skillsShPath = path.join(root, "sources", "skills-sh-top.json");
 
 const markdown = fs.readFileSync(sourcePath, "utf8");
 
@@ -390,15 +391,22 @@ function sourceKind(domain, url) {
   return domain;
 }
 
+function asNumber(value) {
+  const numberValue = Number(value);
+  return Number.isFinite(numberValue) ? numberValue : null;
+}
+
 function normalizeEntry(entry) {
   const domain = getDomain(entry.url);
   const tags = [...new Set(entry.tags || inferTags([entry.repo, entry.title, entry.description, entry.collection || ""]))];
   const collection = entry.collection || "Pinned from brief";
-  const description = entry.description.replace(/\s+/g, " ").trim();
+  const description = String(entry.description || "").replace(/\s+/g, " ").trim();
   const status = entry.status || (entry.official || domain.includes("officialskills") ? "official" : "community");
   const repoKey = (entry.repo || entry.url).toLowerCase();
   const category = entry.primaryCategory || primaryCategory(tags, collection, description);
   const subcategory = entry.subcategory || inferSubcategory(category, tags, collection, description, entry.repo, entry.title);
+  const rank = asNumber(entry.rank);
+  const installs = asNumber(entry.installs);
 
   return {
     id: slugify(`${entry.repo || entry.title}-${entry.url}`),
@@ -417,8 +425,72 @@ function normalizeEntry(entry) {
     tags,
     platforms: entry.platforms || inferPlatforms(`${entry.repo} ${entry.title} ${description} ${entry.url}`),
     pinned: Boolean(entry.pinned || pinnedRepoKeys.has(repoKey)),
+    rank,
+    installs,
+    weeklyInstalls: Array.isArray(entry.weeklyInstalls) ? entry.weeklyInstalls.map(asNumber).filter((value) => value !== null) : [],
+    leaderboard: entry.leaderboard || "",
+    leaderboardPercent: asNumber(entry.leaderboardPercent),
+    registryUrl: entry.registryUrl || (domain.includes("skills.sh") ? entry.url : ""),
+    githubUrl: entry.githubUrl || "",
+    sourceRepo: entry.sourceRepo || "",
+    installCommand: entry.installCommand || "",
+    topics: Array.isArray(entry.topics) ? entry.topics : [],
     searchText: "",
   };
+}
+
+function formatCount(value) {
+  return new Intl.NumberFormat("en-US").format(value || 0);
+}
+
+function loadSkillsShTop() {
+  if (!fs.existsSync(skillsShPath)) {
+    return { metadata: null, skills: [] };
+  }
+
+  const metadata = JSON.parse(fs.readFileSync(skillsShPath, "utf8"));
+  const skills = (metadata.skills || []).map((item) => {
+    const sourceRepo = item.source || "unknown/source";
+    const skillId = item.skillId || item.name || "skill";
+    const registryUrl = item.url || `https://www.skills.sh/${sourceRepo}/${skillId}`;
+    const githubUrl = item.githubUrl || (sourceRepo.includes("/") ? `https://github.com/${sourceRepo}` : "");
+    const topics = Array.isArray(item.topics) ? item.topics : [];
+    const topicTags = topics.map(slugify).filter(Boolean);
+    const tags = [
+      ...inferTags([sourceRepo, skillId, item.name || "", item.description || "", topics.join(" ")]),
+      ...topicTags,
+      "skills-sh-top-2",
+      "leaderboard",
+    ];
+    const description =
+      item.description ||
+      `Top ${metadata.topPercent || 2}% skills.sh all-time leaderboard skill with ${formatCount(item.installs)} installs.`;
+
+    return normalizeEntry({
+      repo: `${sourceRepo}/${skillId}`,
+      title: titleCase(item.name || skillId),
+      skillName: skillId,
+      author: sourceRepo.split("/")[0] || "unknown",
+      url: registryUrl,
+      description,
+      collection: "skills.sh Top 2%",
+      status: item.isOfficial ? "official" : "community",
+      tags: [...new Set(tags)].slice(0, 12),
+      platforms: ["Claude Code", "Codex", "Cursor", "Gemini CLI", "OpenCode", "Windsurf"],
+      rank: item.rank,
+      installs: item.installs,
+      weeklyInstalls: item.weeklyInstalls || [],
+      leaderboard: "skills.sh all-time top 2%",
+      leaderboardPercent: metadata.topPercent || 2,
+      registryUrl,
+      githubUrl,
+      sourceRepo,
+      installCommand: item.installCommand || `npx skills add ${githubUrl || sourceRepo} --skill ${skillId}`,
+      topics,
+    });
+  });
+
+  return { metadata, skills };
 }
 
 function parseMarkdown() {
@@ -494,6 +566,38 @@ for (const manual of userPinned) {
   }
 }
 
+const skillsShTop = loadSkillsShTop();
+
+function mergeSkill(target, incoming) {
+  target.description = target.description.length >= incoming.description.length ? target.description : incoming.description;
+  target.tags = [...new Set([...target.tags, ...incoming.tags])].slice(0, 14);
+  target.platforms = [...new Set([...target.platforms, ...incoming.platforms])];
+  target.topics = [...new Set([...(target.topics || []), ...(incoming.topics || [])])];
+  target.rank = incoming.rank || target.rank;
+  target.installs = incoming.installs || target.installs;
+  target.weeklyInstalls = incoming.weeklyInstalls?.length ? incoming.weeklyInstalls : target.weeklyInstalls;
+  target.leaderboard = incoming.leaderboard || target.leaderboard;
+  target.leaderboardPercent = incoming.leaderboardPercent || target.leaderboardPercent;
+  target.registryUrl = incoming.registryUrl || target.registryUrl;
+  target.githubUrl = incoming.githubUrl || target.githubUrl;
+  target.sourceRepo = incoming.sourceRepo || target.sourceRepo;
+  target.installCommand = incoming.installCommand || target.installCommand;
+  if (incoming.status === "official") target.status = "official";
+}
+
+for (const ranked of skillsShTop.skills) {
+  const matching = [...byRepoOrUrl.values()].find(
+    (item) =>
+      item.repo.toLowerCase() === ranked.repo.toLowerCase() ||
+      item.url.toLowerCase() === ranked.url.toLowerCase(),
+  );
+  if (matching) {
+    mergeSkill(matching, ranked);
+  } else {
+    byRepoOrUrl.set(`${ranked.repo.toLowerCase()}|${ranked.url.toLowerCase()}`, ranked);
+  }
+}
+
 const skills = [...byRepoOrUrl.values()]
   .map((skill) => ({
     ...skill,
@@ -508,6 +612,11 @@ const skills = [...byRepoOrUrl.values()]
       skill.tags.join(" "),
       skill.platforms.join(" "),
       skill.source,
+      skill.rank ? `rank ${skill.rank}` : "",
+      skill.installs ? `${skill.installs} installs` : "",
+      skill.leaderboard,
+      skill.sourceRepo,
+      (skill.topics || []).join(" "),
     ]
       .join(" ")
       .toLowerCase(),
@@ -519,6 +628,9 @@ const stats = {
   pinned: skills.filter((skill) => skill.pinned).length,
   official: skills.filter((skill) => skill.status === "official").length,
   community: skills.filter((skill) => skill.status !== "official").length,
+  skillsShTop: skills.filter((skill) => skill.leaderboard === "skills.sh all-time top 2%").length,
+  skillsShTotalAvailable: skillsShTop.metadata?.totalSkills || 0,
+  skillsShTopPercent: skillsShTop.metadata?.topPercent || 0,
   categories: Object.fromEntries(
     [...new Set(skills.map((skill) => skill.primaryCategory))]
       .sort()
@@ -548,6 +660,11 @@ const payload = {
       name: "MCP Servers Agent Skills Library",
       url: "https://mcpservers.org/agent-skills",
       note: "Cross-check for live agent-skill directory framing and major author groups.",
+    },
+    {
+      name: "skills.sh Top 2%",
+      url: "https://www.skills.sh/",
+      note: `${stats.skillsShTop} all-time leaderboard skills selected from ${formatCount(stats.skillsShTotalAvailable)} skills.`,
     },
     {
       name: "Pinned examples from the brief",

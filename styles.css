@@ -578,6 +578,17 @@ h1 {
   font-size: 0.78rem;
 }
 
+#source-filter {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+}
+
+#source-filter button {
+  min-width: 0;
+  padding-inline: 7px;
+}
+
 .toolbar {
   min-height: 48px;
   margin-bottom: 10px;
@@ -711,6 +722,15 @@ select {
   white-space: nowrap;
 }
 
+.rank-line {
+  display: block;
+  margin-top: 4px;
+  color: var(--amber);
+  font-size: 0.76rem;
+  font-weight: 760;
+  line-height: 1.2;
+}
+
 .card-actions {
   display: flex;
   gap: 5px;
@@ -789,6 +809,11 @@ select {
 .tag.pinned {
   background: var(--amber-soft);
   color: var(--amber);
+}
+
+.tag.leaderboard {
+  background: #f7e0c7;
+  color: #8a4a19;
 }
 
 .list-view {
@@ -1019,6 +1044,32 @@ select {
 .primary-link svg {
   width: 17px;
   height: 17px;
+}
+
+.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 38px;
+  margin-top: -3px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fbfcfa;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 720;
+}
+
+.secondary-link:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.secondary-link svg {
+  width: 16px;
+  height: 16px;
 }
 
 .fit-list {

@@ -47,6 +47,7 @@ const els = {
   statOfficial: document.querySelector("#stat-official"),
   statCommunity: document.querySelector("#stat-community"),
   statPinned: document.querySelector("#stat-pinned"),
+  statSkillsSh: document.querySelector("#stat-skills-sh"),
   filteredCount: document.querySelector("#filtered-count"),
   categoryFilters: document.querySelector("#category-filters"),
   subcategoryFilters: document.querySelector("#subcategory-filters"),
@@ -195,7 +196,11 @@ let networkNodes = [];
 let hoverNode = null;
 
 function number(value) {
-  return new Intl.NumberFormat().format(value || 0);
+  return new Intl.NumberFormat("en-US").format(value || 0);
+}
+
+function compactNumber(value) {
+  return new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 }).format(value || 0);
 }
 
 function escapeHTML(value) {
@@ -323,6 +328,7 @@ function passesFilters(skill) {
   if (state.source === "official" && skill.status !== "official") return false;
   if (state.source === "community" && skill.status === "official") return false;
   if (state.source === "pinned" && !skill.pinned) return false;
+  if (state.source === "skills-sh" && !skill.leaderboard) return false;
 
   const score = scoreSkill(skill);
   scoredSkills.set(skill.id, score);
@@ -337,6 +343,7 @@ function getFiltered() {
   next.sort((a, b) => {
     if (sort === "relevance") return (scoredSkills.get(b.id) || 0) - (scoredSkills.get(a.id) || 0) || a.title.localeCompare(b.title);
     if (sort === "pinned") return Number(b.pinned) - Number(a.pinned) || a.title.localeCompare(b.title);
+    if (sort === "leaderboard") return (a.rank || Number.MAX_SAFE_INTEGER) - (b.rank || Number.MAX_SAFE_INTEGER) || (b.installs || 0) - (a.installs || 0) || a.title.localeCompare(b.title);
     if (sort === "name") return a.title.localeCompare(b.title);
     if (sort === "category") return a.primaryCategory.localeCompare(b.primaryCategory) || a.title.localeCompare(b.title);
     if (sort === "author") return a.author.localeCompare(b.author) || a.title.localeCompare(b.title);
@@ -369,6 +376,7 @@ function tagMarkup(skill, max = 4) {
     skill.subcategory ? `<span class="tag subcategory">${escapeHTML(skill.subcategory)}</span>` : "",
     skill.status === "official" ? '<span class="tag official">official</span>' : "",
     skill.pinned ? '<span class="tag pinned">pinned</span>' : "",
+    skill.leaderboard ? `<span class="tag leaderboard">skills.sh #${number(skill.rank)}</span>` : "",
     ...skill.tags.slice(0, max).map((tag) => `<span class="tag">${escapeHTML(tag)}</span>`),
   ];
   return tags.filter(Boolean).join("");
@@ -379,6 +387,7 @@ function renderStats() {
   els.statOfficial.textContent = number(DATA.stats.official || skills.filter((skill) => skill.status === "official").length);
   els.statCommunity.textContent = number(DATA.stats.community || skills.filter((skill) => skill.status !== "official").length);
   els.statPinned.textContent = number(DATA.stats.pinned || skills.filter((skill) => skill.pinned).length);
+  if (els.statSkillsSh) els.statSkillsSh.textContent = number(DATA.stats.skillsShTop || skills.filter((skill) => skill.leaderboard).length);
 }
 
 function renderIntentButtons() {
@@ -454,7 +463,7 @@ function renderActiveFilters() {
     .map(
       ([type, value, label]) => `
         <span class="active-token">
-          ${escapeHTML(label)}: ${escapeHTML(value)}
+          ${escapeHTML(label)}: ${escapeHTML(value === "skills-sh" ? "skills.sh top 2%" : value)}
           <button type="button" data-remove-filter="${escapeHTML(type)}" data-value="${escapeHTML(value)}" aria-label="Remove ${escapeHTML(label)} filter">x</button>
         </span>`,
     )
@@ -463,12 +472,14 @@ function renderActiveFilters() {
 
 function cardMarkup(skill) {
   const shortlisted = state.shortlist.has(skill.id);
+  const leaderboard = skill.leaderboard ? `<span class="rank-line">skills.sh #${number(skill.rank)} - ${compactNumber(skill.installs)} installs</span>` : "";
   return `
     <article class="skill-card ${skill.pinned ? "pinned" : ""}" data-id="${escapeHTML(skill.id)}" ${categoryStyle(skill.primaryCategory)}>
       <div class="card-top">
         <span class="avatar" aria-hidden="true">${escapeHTML(initials(skill.author))}</span>
         <div class="card-title">
           <h3>${escapeHTML(skill.title)}</h3>
+          ${leaderboard}
           <p>${escapeHTML(skill.repo)} · ${escapeHTML(skill.source)}</p>
         </div>
         <div class="card-actions">
@@ -482,10 +493,12 @@ function cardMarkup(skill) {
 }
 
 function listMarkup(skill) {
+  const leaderboard = skill.leaderboard ? `<small class="rank-line">skills.sh #${number(skill.rank)} - ${compactNumber(skill.installs)} installs</small>` : "";
   return `
     <div class="list-row" data-id="${escapeHTML(skill.id)}">
       <div>
         <h3>${escapeHTML(skill.title)}</h3>
+        ${leaderboard}
         <p>${escapeHTML(skill.repo)} · ${escapeHTML(skill.source)}</p>
       </div>
       <div class="list-meta">${tagMarkup(skill, 2)}</div>
@@ -549,11 +562,18 @@ function relatedSkills(skill) {
 function fitText(skill) {
   const use = skill.tags.slice(0, 3).join(", ") || skill.primaryCategory.toLowerCase();
   const platform = skill.platforms.slice(0, 3).join(", ");
-  return [
+  const items = [
     ["Best fit", `${skill.primaryCategory} work involving ${use}.`],
     ["Source", `${skill.status === "official" ? "Official or team-published" : "Community-published"} entry from ${skill.source}.`],
     ["Likely agent surface", platform ? platform : "Any agent that supports skill instructions."],
   ];
+  if (skill.leaderboard) {
+    items.splice(1, 0, ["Leaderboard", `skills.sh all-time rank #${number(skill.rank)} with ${number(skill.installs)} installs.`]);
+  }
+  if (skill.installCommand) {
+    items.push(["Install", skill.installCommand]);
+  }
+  return items;
 }
 
 function renderDetails() {
@@ -583,6 +603,11 @@ function renderDetails() {
       <a class="primary-link" href="${escapeHTML(skill.url)}" target="_blank" rel="noreferrer">Open source ${icon.external}</a>
       <button class="icon-button ${shortlisted ? "active" : ""}" type="button" data-action="shortlist" data-id="${escapeHTML(skill.id)}" title="${shortlisted ? "Remove from shortlist" : "Add to shortlist"}" aria-label="${shortlisted ? "Remove from shortlist" : "Add to shortlist"}">${icon.star}</button>
     </div>
+    ${
+      skill.githubUrl && skill.githubUrl !== skill.url
+        ? `<a class="secondary-link" href="${escapeHTML(skill.githubUrl)}" target="_blank" rel="noreferrer">Open repository ${icon.external}</a>`
+        : ""
+    }
     <div class="fit-list">
       ${fitText(skill)
         .map(
@@ -633,7 +658,7 @@ function disclosureBrief(items = contextRecommendations(7)) {
   return `Task context:\n${context}\n\nDisclosed skills for this context:\n${items
     .map(
       ({ skill, reason }, index) =>
-        `${index + 1}. ${skill.title} (${skill.repo})\n   Fit: ${reason}; ${skill.primaryCategory} / ${skill.subcategory}\n   Use when: ${skill.description}\n   Source: ${skill.url}`,
+        `${index + 1}. ${skill.title} (${skill.repo})\n   Fit: ${reason}; ${skill.primaryCategory} / ${skill.subcategory}${skill.leaderboard ? `; skills.sh #${number(skill.rank)} with ${number(skill.installs)} installs` : ""}\n   Use when: ${skill.description}\n   Source: ${skill.url}${skill.installCommand ? `\n   Install: ${skill.installCommand}` : ""}`,
     )
     .join("\n")}\n\nInstruction to the AI agent:\nConsider these disclosed skills before starting. Use only the smallest relevant subset, explain which skill(s) you are applying, and ignore any listed skill that does not fit the task.`;
 }

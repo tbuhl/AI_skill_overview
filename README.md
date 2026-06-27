@@ -27,9 +27,10 @@ streamlit run streamlit_app.py
 
 ## Refresh Skill Data
 
-The primary source Markdown is stored in `sources/awesome-agent-skills.md`.
+The primary source Markdown is stored in `sources/awesome-agent-skills.md`. The skills.sh top 2% snapshot is stored in `sources/skills-sh-top.json`.
 
 ```powershell
+node fetch-skills-sh-top.mjs
 node build-data.mjs
 ```
 
